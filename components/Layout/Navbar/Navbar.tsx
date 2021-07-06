@@ -12,6 +12,7 @@ import {
   Text,
   Icon,
   useColorMode,
+  Image,
 } from "@chakra-ui/react";
 
 import { AiOutlineSearch, AiFillBell } from "react-icons/ai";
@@ -21,6 +22,8 @@ import DesktopNav from "./DesktopNav";
 import MobileNav from "./MobileNav";
 
 import { CgMoon, CgSun } from "react-icons/cg";
+import LoginNavButton from "./AuthComponent/LoginNavButton";
+import RegisterNavButton from "./AuthComponent/RegisterNavButton";
 
 const Navbar = () => {
   const mobileNav = useDisclosure();
@@ -33,7 +36,7 @@ const Navbar = () => {
         bg={useColorModeValue("white", "dark.700")}
         w="full"
         px={{ base: 2, sm: 4 }}
-        py="4px"
+        py="6px"
         shadow="md"
       >
         <Flex alignItems="center" justifyContent="space-between" mx="auto">
@@ -45,7 +48,8 @@ const Navbar = () => {
               alignItems="center"
               display={{ base: "none", md: "inline-flex" }}
             >
-              <Icon as={ImBook} mx="4" color="red.300" />
+              {/* <Icon as={ImBook} mx="4" color="red.300" /> */}
+              <Image borderRadius="xl" mr="2" src="/32x.png" alt="logo" />
               <Text>Toshokan</Text>
               <VisuallyHidden>Toshokan</VisuallyHidden>
             </Box>
@@ -102,6 +106,8 @@ const Navbar = () => {
               src="https://i.imgur.com/f5NMjGn.jpg"
               cursor="pointer"
             />
+            <LoginNavButton />
+            <RegisterNavButton />
           </HStack>
         </Flex>
       </Box>

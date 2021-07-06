@@ -6,47 +6,46 @@ import {
   PopoverContent,
   PopoverBody,
   PopoverArrow,
-  useDisclosure,
   Icon,
+  VStack,
+  useColorModeValue,
 } from "@chakra-ui/react";
-import { AiFillHome } from "react-icons/ai";
 import { ImBook } from "react-icons/im";
-import { IoLibrary } from "react-icons/io5";
-
-import NextLink from "next/link";
 
 import { IoIosArrowDown } from "react-icons/io";
+import HomeButton from "./NavItems/HomeButton";
+import LibraryButton from "./NavItems/LibraryButton";
 
 const DesktopNav = () => {
   return (
     <>
       <HStack spacing={3} display={{ base: "none", md: "inline-flex" }}>
-        <Button variant="ghost" leftIcon={<AiFillHome />} size="sm">
-          Home
-        </Button>
+        <HomeButton size="sm" />
         <Popover placement="bottom" isLazy>
           <PopoverTrigger>
-            <Button variant="ghost" leftIcon={<ImBook />} size="sm">
+            <Button
+              bgColor={useColorModeValue("red.300", "red.400")}
+              leftIcon={<ImBook />}
+              size="sm"
+            >
               Novels <Icon ml="1" as={IoIosArrowDown} />
             </Button>
           </PopoverTrigger>
-          <PopoverContent>
+          <PopoverContent w="auto">
             <PopoverArrow />
             <PopoverBody shadow="2xl">
-              <HStack>
-                <Button variant="solid" size="sm">
+              <VStack>
+                <Button w="full" variant="ghost" size="sm">
                   Popular Novels
                 </Button>
-                <Button variant="solid" size="sm">
+                <Button variant="ghost" size="sm">
                   Recently Updated
                 </Button>
-              </HStack>
+              </VStack>
             </PopoverBody>
           </PopoverContent>
         </Popover>
-        <Button variant="ghost" leftIcon={<IoLibrary />} size="sm">
-          Library
-        </Button>
+        <LibraryButton size="sm" />
       </HStack>
     </>
   );
