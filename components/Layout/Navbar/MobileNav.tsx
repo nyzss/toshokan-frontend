@@ -14,7 +14,7 @@ const MobileNav = () => {
       <Box display={{ base: "inline-flex", md: "none" }}>
         <IconButton
           display={{ base: "flex", md: "none" }}
-          aria-label="Open menu"
+          aria-label="Sidebar"
           fontSize="20px"
           color={useColorModeValue("gray.800", "inherit")}
           variant="ghost"

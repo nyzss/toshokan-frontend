@@ -1,32 +1,22 @@
-import {
-  Button,
-  chakra,
-  FormControl,
-  FormLabel,
-  HTMLChakraProps,
-  Input,
-  Stack,
-} from "@chakra-ui/react";
-import * as React from "react";
-import { PasswordField } from "./Password";
+import { Stack, useColorModeValue } from "@chakra-ui/react";
+import EmailInput from "./Fields/EmailInput";
+import PasswordInput from "./Fields/PasswordInput";
+import SubmitButton from "./Fields/SubmitButton";
 
-export const LoginForm = (props: HTMLChakraProps<"form">) => (
-  <chakra.form
-    onSubmit={(e) => {
-      e.preventDefault();
-      // your login logic here
-    }}
-    {...props}
-  >
-    <Stack spacing="6">
-      <FormControl>
-        <FormLabel>Email address</FormLabel>
-        <Input name="email" type="email" autoComplete="email" required />
-      </FormControl>
-      <PasswordField />
-      <Button type="submit" colorScheme="blue" size="lg" fontSize="md">
-        Sign in
-      </Button>
-    </Stack>
-  </chakra.form>
-);
+export interface LoginFormProps {}
+
+const LoginForm: React.SFC<LoginFormProps> = () => {
+  const inputColor = useColorModeValue("gray.100", "gray.600");
+
+  return (
+    <>
+      <Stack spacing="8">
+        <EmailInput inputColor={inputColor} />
+        <PasswordInput inputColor={inputColor} />
+        <SubmitButton submitText="Sign in" />
+      </Stack>
+    </>
+  );
+};
+
+export default LoginForm;

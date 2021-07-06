@@ -39,10 +39,22 @@ const Theme = extendTheme({
         borderRadius: "sm",
       },
     },
+    Input: {
+      sizes: {
+        md: {
+          borderRadius: "sm",
+        },
+      },
+    },
   },
   fonts: {
     body: "Montserrat",
   },
+  radii: {
+    sm: "0.125rem",
+    md: "0.125rem",
+    lg: "0.125rem",
+  }, //might want to edit this later on lol
 });
 
 export default Theme;
