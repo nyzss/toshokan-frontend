@@ -5,7 +5,7 @@ import SubmitButton from "./Fields/SubmitButton";
 
 export interface LoginFormProps {}
 
-const LoginForm: React.SFC<LoginFormProps> = () => {
+const LoginForm: React.FC<LoginFormProps> = () => {
   const inputColor = useColorModeValue("gray.100", "gray.600");
 
   return (

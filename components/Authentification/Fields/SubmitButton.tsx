@@ -4,7 +4,7 @@ export interface SubmitButtonProps {
   submitText: string;
 }
 
-const SubmitButton: React.SFC<SubmitButtonProps> = ({ submitText }) => {
+const SubmitButton: React.FC<SubmitButtonProps> = ({ submitText }) => {
   return (
     <Button
       variant="ghost"

@@ -7,11 +7,14 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import React from "react";
+import { useTranslation } from "react-i18next";
 import LoginForm from "./LoginForm";
 
 export interface LoginProps {}
 
-const LoginCard: React.SFC<LoginProps> = () => {
+const LoginCard: React.FC<LoginProps> = () => {
+  const { t } = useTranslation();
+
   return (
     <>
       <Flex
@@ -30,7 +33,7 @@ const LoginCard: React.SFC<LoginProps> = () => {
             size="xl"
             fontWeight="extrabold"
           >
-            Sign in to your account
+            {t("login-sign-account")}
           </Heading>
           <Box
             bg={useColorModeValue("white", "gray.700")}

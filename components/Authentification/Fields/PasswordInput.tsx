@@ -12,7 +12,7 @@ export interface PasswordInputProps {
   inputColor: string;
 }
 
-const PasswordInput: React.SFC<PasswordInputProps> = ({ inputColor }) => {
+const PasswordInput: React.FC<PasswordInputProps> = ({ inputColor }) => {
   const [password, setPassword] = useState("");
   const [show, setShow] = useState(false);
 

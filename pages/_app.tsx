@@ -1,14 +1,14 @@
-import '../styles/globals.css'
 import type { AppProps } from 'next/app'
-import Head from 'next/head'
 import { ChakraProvider } from '@chakra-ui/react'
 
+import Head from 'next/head'
 import Theme from "../utils/Theme"
 import Navbar from '../components/Layout/Navbar/Navbar'
-import "focus-visible/dist/focus-visible"
 import Footer from '../components/Layout/Footer/Footer'
 
-
+import '../styles/globals.css'
+import "focus-visible/dist/focus-visible"
+import "../utils/i18n"
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   return (

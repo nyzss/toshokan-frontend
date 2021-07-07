@@ -6,7 +6,7 @@ export interface HomeButtonProps {
   size: string;
 }
 
-const HomeButton: React.SFC<HomeButtonProps> = ({ size }) => {
+const HomeButton: React.FC<HomeButtonProps> = ({ size }) => {
   return (
     <>
       <Link href="/" passHref>

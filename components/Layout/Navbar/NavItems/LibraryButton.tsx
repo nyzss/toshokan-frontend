@@ -6,7 +6,7 @@ export interface LibraryButtonProps {
   size: string;
 }
 
-const LibraryButton: React.SFC<LibraryButtonProps> = ({ size }) => {
+const LibraryButton: React.FC<LibraryButtonProps> = ({ size }) => {
   return (
     <>
       <Link href="/" passHref>

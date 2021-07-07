@@ -28,7 +28,7 @@ export interface MobileDrawerProps {
   onClose: () => void;
 }
 
-const MobileDrawer: React.SFC<MobileDrawerProps> = ({ isOpen, onClose }) => {
+const MobileDrawer: React.FC<MobileDrawerProps> = ({ isOpen, onClose }) => {
   return (
     <>
       <Drawer placement="left" isOpen={isOpen} onClose={onClose}>

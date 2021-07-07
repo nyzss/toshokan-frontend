@@ -5,7 +5,7 @@ export interface EmailInputProps {
   inputColor: string;
 }
 
-const EmailInput: React.SFC<EmailInputProps> = ({ inputColor }) => {
+const EmailInput: React.FC<EmailInputProps> = ({ inputColor }) => {
   const [email, setEmail] = useState("");
 
   return (
