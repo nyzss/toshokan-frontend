@@ -3,25 +3,41 @@ import { initReactI18next } from "react-i18next";
 
 import translationEn from "./i18n/en/en.json";
 import translationFr from "./i18n/fr-FR/fr.json";
+import tanslationTr from "./i18n/tr-TR/tr.json";
+import { Lang } from "./types";
 
-i18n
-  .use(initReactI18next) // passes i18n down to react-i18next
-  .init({
-    // the translations
-    // (tip move them in a JSON file and import them,
-    // or even better, manage them via a UI: https://react.i18next.com/guides/multiple-translation-files#manage-your-translations-with-a-management-gui)
-    resources: {
-      en: {
-        translation: translationEn,
-      },
-      fr: {
-        translation: translationFr,
-      },
-    },
-    lng: "en",
-    fallbackLng: "en",
+export const languages: Lang[] = [
+  {
+    code: "en",
+    name: "English",
+  },
+  {
+    code: "fr",
+    name: "Français",
+  },
+  {
+    code: "tr",
+    name: "Turkish",
+  },
+];
 
-    interpolation: {
-      escapeValue: false,
+i18n.use(initReactI18next).init({
+  supportedLngs: ["en", "fr", "tr"],
+  resources: {
+    en: {
+      translation: translationEn,
     },
-  });
+    fr: {
+      translation: translationFr,
+    },
+    tr: {
+      translation: tanslationTr,
+    },
+  },
+  lng: "en",
+  fallbackLng: "en",
+
+  interpolation: {
+    escapeValue: false,
+  },
+});
