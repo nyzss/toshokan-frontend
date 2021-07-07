@@ -6,6 +6,7 @@ import translationFr from "./i18n/fr-FR/fr.json";
 import tanslationTr from "./i18n/tr-TR/tr.json";
 import { Lang } from "./types";
 
+import LanguageDetector from "i18next-browser-languagedetector";
 export const languages: Lang[] = [
   {
     code: "en",
@@ -21,23 +22,31 @@ export const languages: Lang[] = [
   },
 ];
 
-i18n.use(initReactI18next).init({
-  supportedLngs: ["en", "fr", "tr"],
-  resources: {
-    en: {
-      translation: translationEn,
+i18n
+  .use(initReactI18next)
+  .use(LanguageDetector)
+  .init({
+    supportedLngs: ["en", "fr", "tr"],
+    resources: {
+      en: {
+        translation: translationEn,
+      },
+      fr: {
+        translation: translationFr,
+      },
+      tr: {
+        translation: tanslationTr,
+      },
     },
-    fr: {
-      translation: translationFr,
+    fallbackLng: "en",
+    detection: {
+      order: ["cookie", "localStorage", "sessionStorage"],
+      caches: ["cookie", "localStorage"],
+      lookupCookie: "i18n",
+      lookupLocalStorage: "i18n",
     },
-    tr: {
-      translation: tanslationTr,
-    },
-  },
-  lng: "en",
-  fallbackLng: "en",
 
-  interpolation: {
-    escapeValue: false,
-  },
-});
+    interpolation: {
+      escapeValue: false,
+    },
+  });

@@ -13,8 +13,8 @@ import {
 import { ImBook } from "react-icons/im";
 
 import { IoIosArrowDown } from "react-icons/io";
-import HomeButton from "./NavItems/HomeButton";
-import LibraryButton from "./NavItems/LibraryButton";
+import HomeButton from "./NavButtons/HomeButton";
+import LibraryButton from "./NavButtons/LibraryButton";
 
 const DesktopNav = () => {
   return (

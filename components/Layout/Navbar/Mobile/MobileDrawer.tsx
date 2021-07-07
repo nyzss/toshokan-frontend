@@ -20,8 +20,8 @@ import {
 } from "@chakra-ui/react";
 import { AiOutlineGithub } from "react-icons/ai";
 import { ImBook } from "react-icons/im";
-import HomeButton from "../NavItems/HomeButton";
-import LibraryButton from "../NavItems/LibraryButton";
+import HomeButton from "../NavButtons/HomeButton";
+import LibraryButton from "../NavButtons/LibraryButton";
 
 export interface MobileDrawerProps {
   isOpen: boolean;
