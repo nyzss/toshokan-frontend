@@ -1,15 +1,12 @@
-import { Stack, useColorModeValue } from "@chakra-ui/react";
+import { Stack, Text, useColorModeValue } from "@chakra-ui/react";
 import { useState } from "react";
 import { TEmail, TPassword } from "../../utils/types";
 
 import EmailInput from "./Fields/EmailInput";
 import PasswordInput from "./Fields/PasswordInput";
 import SubmitButton from "./Fields/SubmitButton";
-import { useMutation } from "react-query";
 
 export interface LoginFormProps {}
-
-import { AxiosError } from "axios";
 import { LoginAccount } from "../../utils/api";
 
 export const LoginForm: React.FC<LoginFormProps> = () => {
@@ -18,12 +15,16 @@ export const LoginForm: React.FC<LoginFormProps> = () => {
   const [email, setEmail] = useState<TEmail>("");
   const [password, setPassword] = useState<TPassword>("");
 
-  const { mutateAsync: mutateLogin, isError } = useMutation(LoginAccount);
+  const [isError, setIsError] = useState(false);
+  const [error, setError] = useState("");
 
   const handleLogin = async () => {
-    const data = await mutateLogin({ email, password });
-
-    console.log(data);
+    await LoginAccount({
+      email,
+      password,
+      setIsError,
+      setError,
+    });
   };
 
   return (
@@ -41,6 +42,11 @@ export const LoginForm: React.FC<LoginFormProps> = () => {
           inputColor={inputColor}
           isError={isError}
         />
+        {isError && (
+          <Text color="red.500" m="0" p="0" fontSize="sm">
+            {error}
+          </Text>
+        )}
         <SubmitButton handleLogin={handleLogin} submitText="Sign in" />
       </Stack>
     </>
