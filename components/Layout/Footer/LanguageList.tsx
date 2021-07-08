@@ -1,20 +1,34 @@
 import { Menu, MenuButton, MenuList, MenuItem, Button } from "@chakra-ui/react";
+import i18n from "i18next";
+import { useEffect, useState } from "react";
 import { IoChevronDownCircleOutline } from "react-icons/io5";
 
 export interface LanguageListProps {}
 
+import { languages } from "../../../utils/i18n";
+import { Lang } from "../../../utils/types";
+
 const LanguageList: React.FC<LanguageListProps> = () => {
+  const [currentLang, setCurrentLang] = useState(i18n.language);
+
+  //this whole component looks messy af, if needed look back on this
+
+  const changeLang = ({ code }: Lang) => {
+    i18n.changeLanguage(code);
+    setCurrentLang(i18n.language || window.localStorage.i18n);
+  };
+
   return (
     <Menu isLazy>
       <MenuButton as={Button} rightIcon={<IoChevronDownCircleOutline />}>
-        Actions
+        {currentLang.toUpperCase()}
       </MenuButton>
       <MenuList>
-        <MenuItem>Download</MenuItem>
-        <MenuItem>Create a Copy</MenuItem>
-        <MenuItem>Mark as Draft</MenuItem>
-        <MenuItem>Delete</MenuItem>
-        <MenuItem>Attend a Workshop</MenuItem>
+        {languages.map((lang: Lang) => (
+          <MenuItem onClick={() => changeLang(lang)} key={lang.code}>
+            {lang.code.toUpperCase()}
+          </MenuItem>
+        ))}
       </MenuList>
     </Menu>
   );

@@ -1,4 +1,8 @@
 {
   "home": "Ana Sayfa",
-  "login-sign-account": "Hesabınıza giriş yapın"
+  "library": "Kütüphane",
+  "login": "Login",
+  "sign-up": "Sign-Up",
+  "login-sign-account": "Hesabınıza giriş yapın",
+  "password": "Şifre"
 }

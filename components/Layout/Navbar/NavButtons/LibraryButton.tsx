@@ -1,17 +1,21 @@
 import { Button } from "@chakra-ui/react";
-import Link from "next/link";
+import { useTranslation } from "react-i18next";
 import { IoLibrary } from "react-icons/io5";
+
+import Link from "next/link";
 
 export interface LibraryButtonProps {
   size: string;
 }
 
 const LibraryButton: React.FC<LibraryButtonProps> = ({ size }) => {
+  const { t } = useTranslation();
+
   return (
     <>
       <Link href="/" passHref>
         <Button variant="ghost" leftIcon={<IoLibrary />} size={size}>
-          Library
+          {t("library")}
         </Button>
       </Link>
     </>

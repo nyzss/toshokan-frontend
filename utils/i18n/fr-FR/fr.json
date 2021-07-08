@@ -1,4 +1,8 @@
 {
   "home": "Accueil",
-  "login-sign-account": "Connecter vous a votre compte"
+  "library": "Bibliothèque",
+  "login": "Login",
+  "sign-up": "Sign-Up",
+  "login-sign-account": "Connecter vous a votre compte",
+  "password": "Mot de Passe"
 }

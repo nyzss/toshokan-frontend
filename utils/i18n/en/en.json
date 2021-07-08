@@ -1,4 +1,8 @@
 {
   "home": "Home",
-  "login-sign-account": "Sign in to your account"
+  "library": "Library",
+  "login": "Login",
+  "sign-up": "Sign-Up",
+  "login-sign-account": "Sign in to your account",
+  "password": "Password"
 }

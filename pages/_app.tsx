@@ -9,7 +9,6 @@ import Footer from '../components/Layout/Footer/Footer'
 import '../styles/globals.css'
 import "focus-visible/dist/focus-visible"
 import "../utils/i18n"
-import { Provider } from 'jotai'
 
 const MyApp = ({ Component,  pageProps }: AppProps) => {
   return (
@@ -18,11 +17,9 @@ const MyApp = ({ Component,  pageProps }: AppProps) => {
           <link rel="shortcut icon" href="/32x.png" type="image/x-icon" />
     </Head>
       <ChakraProvider theme={Theme}>
-      <Provider>
         <Navbar />
         <Component {...pageProps} />
         <Footer />
-    </Provider>
     </ChakraProvider>
     </>
   )
