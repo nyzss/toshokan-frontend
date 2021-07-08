@@ -1,12 +1,13 @@
 import { Button, useColorModeValue } from "@chakra-ui/react";
+import { useTranslation } from "react-i18next";
 
-export interface RegisterNavProps {}
+const RegisterNavButton: React.FC = () => {
+  const { t } = useTranslation();
 
-const RegisterNavButton: React.FC<RegisterNavProps> = () => {
   return (
     <>
       <Button variant="solid" bgColor={useColorModeValue("red.300", "red.400")}>
-        Sign up
+        {t("sign-up")}
       </Button>
     </>
   );

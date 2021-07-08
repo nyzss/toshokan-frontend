@@ -3,12 +3,9 @@ import { useTranslation } from "react-i18next";
 import { IoLibrary } from "react-icons/io5";
 
 import Link from "next/link";
+import { ButtonProps } from "../../../../utils/types";
 
-export interface LibraryButtonProps {
-  size: string;
-}
-
-const LibraryButton: React.FC<LibraryButtonProps> = ({ size }) => {
+const LibraryButton: React.FC<ButtonProps> = ({ size }) => {
   const { t } = useTranslation();
 
   return (

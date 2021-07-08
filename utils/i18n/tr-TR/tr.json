@@ -1,8 +1,9 @@
 {
   "home": "Ana Sayfa",
   "library": "Kütüphane",
-  "login": "Login",
-  "sign-up": "Sign-Up",
+  "novels": "Noveler",
+  "login": "Giriş Yap",
+  "sign-up": "Kaydol",
   "login-sign-account": "Hesabınıza giriş yapın",
   "password": "Şifre"
 }

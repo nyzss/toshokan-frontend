@@ -36,5 +36,13 @@ export interface SubmitButtonProps {
   handleLogin: () => void;
 }
 
+export interface MobileDrawerProps {
+  isOpen: boolean;
+  onClose: () => void;
+}
+export interface ButtonProps {
+  size: string;
+}
+
 export type TEmail = string;
 export type TPassword = string;

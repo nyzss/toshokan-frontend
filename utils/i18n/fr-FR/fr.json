@@ -1,8 +1,9 @@
 {
   "home": "Accueil",
   "library": "Bibliothèque",
-  "login": "Login",
-  "sign-up": "Sign-Up",
+  "novels": "Novels",
+  "login": "Connexion",
+  "sign-up": "Créer un Compte",
   "login-sign-account": "Connecter vous a votre compte",
   "password": "Mot de Passe"
 }

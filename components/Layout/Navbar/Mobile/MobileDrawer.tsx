@@ -23,12 +23,12 @@ import { ImBook } from "react-icons/im";
 import HomeButton from "../NavButtons/HomeButton";
 import LibraryButton from "../NavButtons/LibraryButton";
 
-export interface MobileDrawerProps {
-  isOpen: boolean;
-  onClose: () => void;
-}
+import { useTranslation } from "react-i18next";
+import { MobileDrawerProps } from "../../../../utils/types";
 
 const MobileDrawer: React.FC<MobileDrawerProps> = ({ isOpen, onClose }) => {
+  const { t } = useTranslation();
+
   return (
     <>
       <Drawer placement="left" isOpen={isOpen} onClose={onClose}>
@@ -46,7 +46,7 @@ const MobileDrawer: React.FC<MobileDrawerProps> = ({ isOpen, onClose }) => {
                     <AccordionButton variant="solid" bgColor="red.300">
                       <ImBook />
                       <Box ml="2" flex="1" w="full">
-                        Novels
+                        {t("novels")}
                       </Box>
                       <AccordionIcon />
                     </AccordionButton>

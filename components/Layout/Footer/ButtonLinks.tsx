@@ -2,9 +2,7 @@ import { ButtonGroup, IconButton } from "@chakra-ui/react";
 import { AiOutlineGithub } from "react-icons/ai";
 import { IoLogoDiscord } from "react-icons/io5";
 
-export interface ButtonLinksProps {}
-
-const ButtonLinks: React.FC<ButtonLinksProps> = () => {
+const ButtonLinks: React.FC = () => {
   return (
     <ButtonGroup variant="ghost" color="gray.600">
       <IconButton

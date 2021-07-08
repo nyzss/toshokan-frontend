@@ -2,12 +2,9 @@ import { Button } from "@chakra-ui/react";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
 import { AiFillHome } from "react-icons/ai";
+import { ButtonProps } from "../../../../utils/types";
 
-export interface HomeButtonProps {
-  size: string;
-}
-
-const HomeButton: React.FC<HomeButtonProps> = ({ size }) => {
+const HomeButton: React.FC<ButtonProps> = ({ size }) => {
   const { t } = useTranslation();
   return (
     <>

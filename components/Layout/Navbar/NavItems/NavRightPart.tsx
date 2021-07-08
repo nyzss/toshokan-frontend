@@ -1,4 +1,3 @@
-export interface NavRightPartProps {}
 import {
   Avatar,
   HStack,
@@ -16,7 +15,8 @@ import { AiOutlineSearch, AiFillBell } from "react-icons/ai";
 import { CgMoon, CgSun } from "react-icons/cg";
 import LoginNavButton from "../NavButtons/LoginNavButton";
 import RegisterNavButton from "../NavButtons/RegisterNavButton";
-const NavRightPart: React.FC<NavRightPartProps> = () => {
+
+const NavRightPart: React.FC = () => {
   const mobileNav = useDisclosure();
 
   const { toggleColorMode, colorMode } = useColorMode();

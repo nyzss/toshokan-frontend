@@ -10,6 +10,7 @@ import {
   VStack,
   useColorModeValue,
 } from "@chakra-ui/react";
+import { useTranslation } from "react-i18next";
 import { ImBook } from "react-icons/im";
 
 import { IoIosArrowDown } from "react-icons/io";
@@ -17,6 +18,8 @@ import HomeButton from "./NavButtons/HomeButton";
 import LibraryButton from "./NavButtons/LibraryButton";
 
 const DesktopNav = () => {
+  const { t } = useTranslation();
+
   return (
     <>
       <HStack spacing={3} display={{ base: "none", md: "inline-flex" }}>
@@ -28,7 +31,7 @@ const DesktopNav = () => {
               leftIcon={<ImBook />}
               size="sm"
             >
-              Novels <Icon ml="1" as={IoIosArrowDown} />
+              {t("novels")} <Icon ml="1" as={IoIosArrowDown} />
             </Button>
           </PopoverTrigger>
           <PopoverContent w="auto">

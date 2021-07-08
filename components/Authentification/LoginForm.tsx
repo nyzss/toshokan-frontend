@@ -6,10 +6,9 @@ import EmailInput from "./Fields/EmailInput";
 import PasswordInput from "./Fields/PasswordInput";
 import SubmitButton from "./Fields/SubmitButton";
 
-export interface LoginFormProps {}
 import { LoginAccount } from "../../utils/api";
 
-export const LoginForm: React.FC<LoginFormProps> = () => {
+export const LoginForm: React.FC = () => {
   const inputColor = useColorModeValue("gray.100", "gray.600");
 
   const [email, setEmail] = useState<TEmail>("");

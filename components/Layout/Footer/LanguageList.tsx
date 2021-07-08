@@ -3,12 +3,10 @@ import i18n from "i18next";
 import { useEffect, useState } from "react";
 import { IoChevronDownCircleOutline } from "react-icons/io5";
 
-export interface LanguageListProps {}
-
 import { languages } from "../../../utils/i18n";
 import { Lang } from "../../../utils/types";
 
-const LanguageList: React.FC<LanguageListProps> = () => {
+const LanguageList: React.FC = () => {
   const [currentLang, setCurrentLang] = useState(i18n.language);
 
   //this whole component looks messy af, if needed look back on this

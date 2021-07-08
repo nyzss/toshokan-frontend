@@ -3,9 +3,7 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import { LoginForm } from "./LoginForm";
 
-export interface LoginProps {}
-
-export const LoginCard: React.FC<LoginProps> = () => {
+export const LoginCard: React.FC = () => {
   const { t } = useTranslation();
 
   return (

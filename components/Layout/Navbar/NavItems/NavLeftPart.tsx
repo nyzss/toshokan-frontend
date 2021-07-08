@@ -2,9 +2,7 @@ import { Box, HStack, Image, Text, VisuallyHidden } from "@chakra-ui/react";
 import DesktopNav from "../DesktopNav";
 import MobileNav from "../MobileNav";
 
-export interface NavLeftPartProps {}
-
-const NavLeftPart: React.FC<NavLeftPartProps> = () => {
+const NavLeftPart: React.FC = () => {
   return (
     <HStack display="flex" spacing={3} alignItems="center">
       <MobileNav />
