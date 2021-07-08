@@ -1,14 +1,15 @@
 import { Stack, Text, useColorModeValue } from "@chakra-ui/react";
 import { useState } from "react";
+import { userStore } from "../../store/Store";
+import { LoginAccount } from "../../utils/api";
 import { TEmail, TPassword } from "../../utils/types";
-
 import EmailInput from "./Fields/EmailInput";
 import PasswordInput from "./Fields/PasswordInput";
 import SubmitButton from "./Fields/SubmitButton";
 
-import { LoginAccount } from "../../utils/api";
-
 export const LoginForm: React.FC = () => {
+  const { setUser } = userStore((state) => state);
+
   const inputColor = useColorModeValue("gray.100", "gray.600");
 
   const [email, setEmail] = useState<TEmail>("");
@@ -18,12 +19,13 @@ export const LoginForm: React.FC = () => {
   const [error, setError] = useState("");
 
   const handleLogin = async () => {
-    await LoginAccount({
+    const user = await LoginAccount({
       email,
       password,
       setIsError,
       setError,
     });
+    setUser();
   };
 
   return (
@@ -42,7 +44,13 @@ export const LoginForm: React.FC = () => {
           isError={isError}
         />
         {isError && (
-          <Text color="red.500" m="0" p="0" fontSize="sm">
+          <Text
+            onClick={() => setIsError(false)}
+            color="red.500"
+            m="0"
+            p="0"
+            fontSize="sm"
+          >
             {error}
           </Text>
         )}

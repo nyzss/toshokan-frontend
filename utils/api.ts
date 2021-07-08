@@ -1,5 +1,5 @@
-import { ILogin } from "./types";
 import axios from "axios";
+import { ILogin } from "./types";
 
 const instance = axios.create({
   withCredentials: true,
@@ -13,21 +13,35 @@ export const LoginAccount = async ({
   setError,
 }: ILogin) => {
   try {
-    const data = await instance.post("/auth/login", {
+    const login = await instance.post("/auth/login", {
       email,
       password,
     });
 
-    return data.data;
+    return login.data;
   } catch (error) {
     if (axios.isAxiosError(error)) {
       setIsError(true);
       setError(error.response?.data);
-      // setTimeout(() => {
-      //   setIsError(false);
-      //   setError("");
-      // }, 2500);
       return error.response?.data;
     }
   }
+};
+
+export const CheckLoggedIn = async () => {
+  try {
+    const check = await instance.get("/auth/check");
+
+    return check.data;
+  } catch (error) {
+    if (axios.isAxiosError(error)) {
+      return error.response?.data;
+    }
+  }
+};
+
+export const HandleLogout = async () => {
+  await instance.get("/auth/logout").then(() => {
+    CheckLoggedIn();
+  });
 };

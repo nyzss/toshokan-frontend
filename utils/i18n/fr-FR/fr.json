@@ -2,8 +2,10 @@
   "home": "Accueil",
   "library": "Bibliothèque",
   "novels": "Novels",
+  "search": "Rechercher...",
   "login": "Connexion",
   "sign-up": "Créer un Compte",
+  "logout": "Deconnecter",
   "login-sign-account": "Connecter vous a votre compte",
   "password": "Mot de Passe"
 }

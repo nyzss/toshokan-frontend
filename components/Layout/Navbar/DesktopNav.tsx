@@ -1,18 +1,17 @@
 import {
   Button,
   HStack,
-  Popover,
-  PopoverTrigger,
-  PopoverContent,
-  PopoverBody,
-  PopoverArrow,
   Icon,
-  VStack,
+  Popover,
+  PopoverArrow,
+  PopoverBody,
+  PopoverContent,
+  PopoverTrigger,
   useColorModeValue,
+  VStack,
 } from "@chakra-ui/react";
 import { useTranslation } from "react-i18next";
 import { ImBook } from "react-icons/im";
-
 import { IoIosArrowDown } from "react-icons/io";
 import HomeButton from "./NavButtons/HomeButton";
 import LibraryButton from "./NavButtons/LibraryButton";

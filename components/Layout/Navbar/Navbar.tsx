@@ -1,5 +1,4 @@
-import { useColorModeValue, Box, Flex } from "@chakra-ui/react";
-
+import { Box, Flex, useColorModeValue } from "@chakra-ui/react";
 import NavLeftPart from "./NavItems/NavLeftPart";
 import NavRightPart from "./NavItems/NavRightPart";
 
@@ -13,7 +12,11 @@ const Navbar = () => {
         py="6px"
         shadow="md"
       >
-        <Flex alignItems="center" justifyContent="space-between" mx="auto">
+        <Flex
+          alignItems="center"
+          justifyContent="space-between"
+          mx={{ base: "0", lg: "24" }}
+        >
           {/* with the logo/name and navitems */}
           <NavLeftPart />
           {/* with the auth/avatar, search bar and icons  */}

@@ -2,8 +2,10 @@
   "home": "Ana Sayfa",
   "library": "Kütüphane",
   "novels": "Noveler",
+  "search": "Ara...",
   "login": "Giriş Yap",
   "sign-up": "Kaydol",
+  "logout": "Çıkış Yap",
   "login-sign-account": "Hesabınıza giriş yapın",
   "password": "Şifre"
 }

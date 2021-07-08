@@ -1,15 +1,16 @@
-import type { AppProps } from 'next/app'
-import { ChakraProvider} from '@chakra-ui/react'
-
-import Head from 'next/head'
-import Theme from "../utils/Theme"
-import Navbar from '../components/Layout/Navbar/Navbar'
-import Footer from '../components/Layout/Footer/Footer'
-
-import '../styles/globals.css'
+import { ChakraProvider } from '@chakra-ui/react'
 import "focus-visible/dist/focus-visible"
+import type { AppProps } from 'next/app'
+import Head from 'next/head'
+import { QueryClient, QueryClientProvider } from 'react-query'
+import CheckLogin from '../components/Authentification/CheckLogin'
+import Footer from '../components/Layout/Footer/Footer'
+import Navbar from '../components/Layout/Navbar/Navbar'
+import '../styles/globals.css'
 import "../utils/i18n"
-import { QueryClientProvider, QueryClient } from 'react-query'
+import Theme from "../utils/Theme"
+
+
 
 
 const queryClient = new QueryClient()
@@ -23,6 +24,7 @@ const MyApp = ({ Component,  pageProps }: AppProps) => {
       <QueryClientProvider client={queryClient}>
       <ChakraProvider theme={Theme}>
         <Navbar />
+        <CheckLogin/>
         <Component {...pageProps} />
         <Footer />
     </ChakraProvider>

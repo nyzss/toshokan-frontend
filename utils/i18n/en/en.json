@@ -2,8 +2,10 @@
   "home": "Home",
   "library": "Library",
   "novels": "Novels",
+  "search": "Search...",
   "login": "Login",
   "sign-up": "Sign-Up",
+  "logout": "Logout",
   "login-sign-account": "Sign in to your account",
   "password": "Password"
 }

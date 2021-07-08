@@ -5,9 +5,19 @@ export type Lang = {
   name: string;
 };
 
-export interface Global {
-  username: string;
-  changeUsername: (value: string) => void;
+export type UserData = {
+  about?: string;
+  createdAt?: string;
+  id?: string;
+  role?: string;
+  updatedAt?: string;
+  username?: string;
+};
+// | boolean;
+
+export interface IUser {
+  user: UserData;
+  setUser: (value: UserData) => void;
 }
 
 export interface ILogin {
