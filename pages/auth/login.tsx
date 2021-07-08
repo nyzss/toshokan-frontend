@@ -1,5 +1,5 @@
 import Head from "next/head";
-import LoginCard from "../../components/Authentification/LoginCard";
+import { LoginCard } from "../../components/Authentification/LoginCard";
 
 export interface LoginProps {}
 

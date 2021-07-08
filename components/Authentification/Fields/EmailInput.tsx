@@ -1,13 +1,12 @@
 import { FormControl, FormLabel, Input } from "@chakra-ui/react";
-import { useState } from "react";
+import { Dispatch, useState, SetStateAction } from "react";
+import { EmailInputProps } from "../../../utils/types";
 
-export interface EmailInputProps {
-  inputColor: string;
-}
-
-const EmailInput: React.FC<EmailInputProps> = ({ inputColor }) => {
-  const [email, setEmail] = useState("");
-
+const EmailInput: React.FC<EmailInputProps> = ({
+  inputColor,
+  email,
+  setEmail,
+}) => {
   return (
     <FormControl>
       <FormLabel>Email</FormLabel>
@@ -17,7 +16,8 @@ const EmailInput: React.FC<EmailInputProps> = ({ inputColor }) => {
         onChange={(e) => setEmail(e.target.value)}
         placeholder="Email"
         bgColor={inputColor}
-        // borderRadius="sm"
+        isInvalid
+        errorBorderColor="red.500"
       />
     </FormControl>
   );

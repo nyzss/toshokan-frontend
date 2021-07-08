@@ -6,15 +6,15 @@ import {
   InputGroup,
   InputRightElement,
 } from "@chakra-ui/react";
-import { useState } from "react";
+import { Dispatch, useState, SetStateAction } from "react";
 import { useTranslation } from "react-i18next";
+import { PasswordInputProps } from "../../../utils/types";
 
-export interface PasswordInputProps {
-  inputColor: string;
-}
-
-const PasswordInput: React.FC<PasswordInputProps> = ({ inputColor }) => {
-  const [password, setPassword] = useState("");
+const PasswordInput: React.FC<PasswordInputProps> = ({
+  inputColor,
+  password,
+  setPassword,
+}) => {
   const [show, setShow] = useState(false);
 
   const { t } = useTranslation();
@@ -30,6 +30,8 @@ const PasswordInput: React.FC<PasswordInputProps> = ({ inputColor }) => {
           onChange={(e) => setPassword(e.target.value)}
           placeholder="Enter password"
           bgColor={inputColor}
+          isInvalid
+          errorBorderColor="red.500"
         />
         <InputRightElement width="4.5rem">
           <Button h="1.75rem" size="sm" onClick={() => setShow(!show)}>

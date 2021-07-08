@@ -9,6 +9,10 @@ import Footer from '../components/Layout/Footer/Footer'
 import '../styles/globals.css'
 import "focus-visible/dist/focus-visible"
 import "../utils/i18n"
+import { QueryClientProvider, QueryClient } from 'react-query'
+
+
+const queryClient = new QueryClient()
 
 const MyApp = ({ Component,  pageProps }: AppProps) => {
   return (
@@ -16,11 +20,13 @@ const MyApp = ({ Component,  pageProps }: AppProps) => {
       <Head>
           <link rel="shortcut icon" href="/32x.png" type="image/x-icon" />
     </Head>
+      <QueryClientProvider client={queryClient}>
       <ChakraProvider theme={Theme}>
         <Navbar />
         <Component {...pageProps} />
         <Footer />
     </ChakraProvider>
+    </QueryClientProvider>
     </>
   )
 }
