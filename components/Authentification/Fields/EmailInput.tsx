@@ -6,6 +6,7 @@ const EmailInput: React.FC<EmailInputProps> = ({
   inputColor,
   email,
   setEmail,
+  isError,
 }) => {
   return (
     <FormControl>
@@ -16,7 +17,7 @@ const EmailInput: React.FC<EmailInputProps> = ({
         onChange={(e) => setEmail(e.target.value)}
         placeholder="Email"
         bgColor={inputColor}
-        isInvalid
+        isInvalid={isError}
         errorBorderColor="red.500"
       />
     </FormControl>

@@ -10,26 +10,28 @@ export interface Global {
   changeUsername: (value: string) => void;
 }
 
-export type UserType = {
+export interface IUser {
   email: string;
   password: string;
-};
+}
 
 export interface EmailInputProps {
   inputColor: string;
   email: string;
   setEmail: Dispatch<SetStateAction<string>>;
+  isError: boolean;
 }
 
 export interface PasswordInputProps {
   inputColor: string;
   password: string;
   setPassword: Dispatch<SetStateAction<string>>;
+  isError: boolean;
 }
 
 export interface SubmitButtonProps {
   submitText: string;
-  handleLogin: () => Promise<void>;
+  handleLogin: () => void;
 }
 
 export type TEmail = string;
