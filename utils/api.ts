@@ -1,5 +1,5 @@
 import axios from "axios";
-import { ILogin } from "./types";
+import { ILogin } from "./types/api";
 
 const instance = axios.create({
   withCredentials: true,
@@ -34,9 +34,7 @@ export const CheckLoggedIn = async () => {
 
     return check.data;
   } catch (error) {
-    if (axios.isAxiosError(error)) {
-      return error.response?.data;
-    }
+    return {};
   }
 };
 
