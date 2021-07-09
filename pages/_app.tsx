@@ -6,8 +6,8 @@ import Router from 'next/router'
 import nprogress from "nprogress"
 import { QueryClient, QueryClientProvider } from 'react-query'
 import CheckLogin from '../components/Authentification/CheckLogin'
-import Footer from '../components/Layout/Footer/Footer'
-import Navbar from '../components/Layout/Navbar/Navbar'
+import Footer from '../components/Footer/Footer'
+import Navbar from '../components/Layout/Navbar'
 import '../styles/globals.css'
 import "../styles/nprogress.css"
 import "../utils/i18n"

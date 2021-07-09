@@ -2,7 +2,7 @@ import { Box, Flex, Heading, Image, useColorModeValue } from "@chakra-ui/react";
 import { useTranslation } from "react-i18next";
 import { LoginForm } from "./LoginForm";
 
-export const LoginCard: React.FC = () => {
+const LoginCard: React.FC = () => {
   const { t } = useTranslation();
 
   return (
@@ -36,3 +36,5 @@ export const LoginCard: React.FC = () => {
     </>
   );
 };
+
+export default LoginCard;

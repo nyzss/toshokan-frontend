@@ -2,8 +2,8 @@ import { Button, Menu, MenuButton, MenuItem, MenuList } from "@chakra-ui/react";
 import i18n from "i18next";
 import { useState } from "react";
 import { IoChevronDownCircleOutline } from "react-icons/io5";
-import { languages } from "../../../utils/i18n";
-import { Lang } from "../../../utils/types/types";
+import { languages } from "../../utils/i18n";
+import { Lang } from "../../utils/types/types";
 
 const LanguageList: React.FC = () => {
   const [currentLang, setCurrentLang] = useState(i18n.language);

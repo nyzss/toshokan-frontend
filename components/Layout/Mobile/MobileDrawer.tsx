@@ -21,7 +21,7 @@ import {
 import { useTranslation } from "react-i18next";
 import { AiOutlineGithub } from "react-icons/ai";
 import { ImBook } from "react-icons/im";
-import { MobileDrawerProps } from "../../../../utils/types/components";
+import { MobileDrawerProps } from "../../../utils/types/components";
 import HomeButton from "../NavButtons/HomeButton";
 import LibraryButton from "../NavButtons/LibraryButton";
 

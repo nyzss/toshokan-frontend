@@ -1,5 +1,5 @@
 import { Avatar, Menu, MenuButton, MenuList } from "@chakra-ui/react";
-import LogoutMenuItem from "../../../Authentification/Logout/LogoutMenuItem";
+import LogoutMenuItem from "../../Authentification/Logout/LogoutMenuItem";
 
 const AvatarNav: React.FC = () => {
   return (

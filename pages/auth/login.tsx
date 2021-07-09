@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
-import { LoginCard } from "../../components/Authentification/Login/LoginCard";
+import LoginCard from "../../components/Authentification/Login/LoginCard";
 import { userStore } from "../../store/Store";
 
 const Login: React.FC = () => {

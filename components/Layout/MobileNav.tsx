@@ -1,7 +1,7 @@
 import {
+  Box,
   IconButton,
   useColorModeValue,
-  Box,
   useDisclosure,
 } from "@chakra-ui/react";
 import { AiOutlineMenu } from "react-icons/ai";
