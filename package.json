@@ -13,11 +13,13 @@
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
     "axios": "^0.21.1",
+    "dayjs": "^1.10.6",
     "focus-visible": "^5.2.0",
     "framer-motion": "^4",
     "i18next": "^20.3.2",
     "i18next-browser-languagedetector": "^6.1.2",
     "next": "11.0.1",
+    "nprogress": "^0.2.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-i18next": "^11.11.1",
@@ -26,6 +28,7 @@
     "zustand": "^3.5.5"
   },
   "devDependencies": {
+    "@types/nprogress": "^0.2.0",
     "@types/react": "17.0.13",
     "eslint": "7.30.0",
     "eslint-config-next": "11.0.1",

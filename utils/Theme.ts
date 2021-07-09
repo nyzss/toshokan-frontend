@@ -1,10 +1,9 @@
 import { extendTheme } from "@chakra-ui/react";
-// import { mode } from "@chakra-ui/theme-tools";
 
 const Theme = extendTheme({
   colors: {
     toshokan: {
-      100: "#colorhere",
+      100: "#colorhere", // fuck i forgot colors
       200: "#colorhere",
       300: "#colorhere",
       400: "#colorhere",
@@ -42,7 +41,9 @@ const Theme = extendTheme({
     Input: {
       sizes: {
         md: {
-          borderRadius: "sm",
+          field: {
+            borderRadius: "sm",
+          },
         },
       },
     },
@@ -50,11 +51,11 @@ const Theme = extendTheme({
   fonts: {
     body: "Montserrat",
   },
-  radii: {
-    sm: "0.125rem",
-    md: "0.125rem",
-    lg: "0.125rem",
-  }, //might want to edit this later on lol
+  // radii: {
+  //   sm: "0.125rem",
+  //   md: "0.125rem",
+  //   lg: "0.125rem",
+  // }, //might want to edit this later on lol
 });
 
 export default Theme;
