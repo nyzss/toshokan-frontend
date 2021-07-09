@@ -1,5 +1,5 @@
 import { Button, useColorModeValue } from "@chakra-ui/react";
-import { SubmitButtonProps } from "../../../utils/types";
+import { SubmitButtonProps } from "../../../utils/types/components";
 
 const SubmitButton: React.FC<SubmitButtonProps> = ({
   submitText,

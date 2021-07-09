@@ -18,13 +18,12 @@ import {
   Text,
   VStack,
 } from "@chakra-ui/react";
+import { useTranslation } from "react-i18next";
 import { AiOutlineGithub } from "react-icons/ai";
 import { ImBook } from "react-icons/im";
+import { MobileDrawerProps } from "../../../../utils/types/components";
 import HomeButton from "../NavButtons/HomeButton";
 import LibraryButton from "../NavButtons/LibraryButton";
-
-import { useTranslation } from "react-i18next";
-import { MobileDrawerProps } from "../../../../utils/types";
 
 const MobileDrawer: React.FC<MobileDrawerProps> = ({ isOpen, onClose }) => {
   const { t } = useTranslation();

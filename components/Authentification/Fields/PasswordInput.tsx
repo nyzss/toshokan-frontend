@@ -8,7 +8,7 @@ import {
 } from "@chakra-ui/react";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { PasswordInputProps } from "../../../utils/types";
+import { PasswordInputProps } from "../../../utils/types/components";
 
 const PasswordInput: React.FC<PasswordInputProps> = ({
   inputColor,

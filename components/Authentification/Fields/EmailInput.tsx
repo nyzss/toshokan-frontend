@@ -1,6 +1,5 @@
 import { FormControl, FormLabel, Input } from "@chakra-ui/react";
-import { Dispatch, useState, SetStateAction } from "react";
-import { EmailInputProps } from "../../../utils/types";
+import { EmailInputProps } from "../../../utils/types/components";
 
 const EmailInput: React.FC<EmailInputProps> = ({
   inputColor,
