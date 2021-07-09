@@ -1,11 +1,9 @@
-import { Avatar, Menu, MenuButton, MenuItem, MenuList } from "@chakra-ui/react";
-import { useTranslation } from "react-i18next";
-import { HandleLogout } from "../../../../utils/api";
+import { Avatar, Menu, MenuButton, MenuList } from "@chakra-ui/react";
+import LogoutMenuItem from "../../../Authentification/Logout/LogoutMenuItem";
 
 const AvatarNav: React.FC = () => {
-  const { t } = useTranslation();
   return (
-    <Menu>
+    <Menu isLazy>
       <MenuButton>
         <Avatar
           size="sm"
@@ -14,8 +12,8 @@ const AvatarNav: React.FC = () => {
           cursor="pointer"
         />
       </MenuButton>
-      <MenuList>
-        <MenuItem onClick={HandleLogout}>{t("logout")}</MenuItem>
+      <MenuList w="50%">
+        <LogoutMenuItem />
       </MenuList>
     </Menu>
   );
