@@ -1,12 +1,11 @@
 import i18n from "i18next";
+import LanguageDetector from "i18next-browser-languagedetector";
 import { initReactI18next } from "react-i18next";
-
 import translationEn from "./i18n/en/en.json";
 import translationFr from "./i18n/fr-FR/fr.json";
 import tanslationTr from "./i18n/tr-TR/tr.json";
-import { Lang } from "./types";
+import { Lang } from "./types/types";
 
-import LanguageDetector from "i18next-browser-languagedetector";
 export const languages: Lang[] = [
   {
     code: "en",
