@@ -5,13 +5,6 @@ const CheckLogin: React.FC = () => {
   const { setUser, user } = userStore((state) => state);
 
   useEffect(() => {
-    //  const getLoggedIn = async () => {
-    //    const user = await CheckLoggedIn();
-    //    setUser(user);
-    //  };
-
-    // getLoggedIn();
-
     setUser();
   }, [setUser, user]);
 

@@ -1,11 +1,11 @@
-import { HStack, useDisclosure } from "@chakra-ui/react";
+import { Box, HStack, useDisclosure } from "@chakra-ui/react";
 import { userStore } from "../../../../store/Store";
 import LoginNavButton from "../NavButtons/LoginNavButton";
 import RegisterNavButton from "../NavButtons/RegisterNavButton";
-import AvatarNav from "./Avatar";
-import DarkMode from "./DarkMode";
-import NotificationBell from "./NotificationBell";
-import SearchBar from "./SearchBar";
+import AvatarNav from "../NavItems/Avatar";
+import DarkMode from "../NavItems/DarkMode";
+import NotificationBell from "../NavItems/NotificationBell";
+import SearchBar from "../NavItems/SearchBar";
 
 const NavRightPart: React.FC = () => {
   const mobileNav = useDisclosure();
@@ -27,10 +27,12 @@ const NavRightPart: React.FC = () => {
       {user && <AvatarNav />}
 
       {!user && (
-        <>
-          <LoginNavButton />
-          <RegisterNavButton />
-        </>
+        <Box display={{ base: "none", md: "inline-flex" }}>
+          <HStack spacing="4">
+            <LoginNavButton />
+            <RegisterNavButton />
+          </HStack>
+        </Box>
       )}
     </HStack>
   );
