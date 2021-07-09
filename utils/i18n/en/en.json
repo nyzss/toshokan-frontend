@@ -8,5 +8,7 @@
   "logout": "Logout",
   "login-sign-account": "Sign in to your account",
   "welcome-sign-up": "Welcome to Toshokan",
-  "password": "Password"
+  "password": "Password",
+  "username-3-char-long": "Please make sure your username is more than 3 characters long. this is working",
+  "create-an-account": "Create an Account!"
 }
