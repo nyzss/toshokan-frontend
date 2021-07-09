@@ -1,5 +1,6 @@
 import { Box, Flex, Heading, Image, useColorModeValue } from "@chakra-ui/react";
 import { useTranslation } from "react-i18next";
+import RegisterForm from "./RegisterForm";
 // import { LoginForm } from "./LoginForm";
 
 const RegisterCard: React.FC = () => {
@@ -9,10 +10,10 @@ const RegisterCard: React.FC = () => {
     <>
       <Flex
         bg={useColorModeValue("gray.50", "inherit")}
-        py="24"
+        py="12"
         px={{ base: "4", lg: "8" }}
       >
-        <Box maxW="md" mx="auto">
+        <Box maxW="md" w="md" mx="auto">
           <Image src="/128x.png" borderRadius="lg" alt="logo" mx="auto" />
           <Heading
             mt="4x"
@@ -29,7 +30,7 @@ const RegisterCard: React.FC = () => {
             px={{ base: "8", md: "10" }}
             shadow="base"
           >
-            {/* <LoginForm /> */}
+            <RegisterForm />
           </Box>
         </Box>
       </Flex>

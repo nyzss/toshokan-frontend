@@ -9,10 +9,10 @@ const LoginCard: React.FC = () => {
     <>
       <Flex
         bg={useColorModeValue("gray.50", "inherit")}
-        py="24"
+        py="12"
         px={{ base: "4", lg: "8" }}
       >
-        <Box maxW="md" mx="auto">
+        <Box maxW="md" w="md" mx="auto">
           <Image src="/128x.png" borderRadius="lg" alt="logo" mx="auto" />
           <Heading
             mt="4x" // here
