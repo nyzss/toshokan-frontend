@@ -7,7 +7,7 @@ import nprogress from "nprogress"
 import { QueryClient, QueryClientProvider } from 'react-query'
 import CheckLogin from '../components/Authentification/CheckLogin'
 import Footer from '../components/Footer/Footer'
-import Navbar from '../components/Layout/Navbar'
+import Navbar from '../components/Navbar/Navbar'
 import '../styles/globals.css'
 import "../styles/nprogress.css"
 import "../utils/i18n"
