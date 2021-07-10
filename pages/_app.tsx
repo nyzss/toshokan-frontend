@@ -8,6 +8,7 @@ import { QueryClient, QueryClientProvider } from 'react-query'
 import CheckLogin from '../components/Authentification/CheckLogin'
 import Footer from '../components/Footer/Footer'
 import Navbar from '../components/Navbar/Navbar'
+import Preloader from '../components/Preloader'
 import '../styles/globals.css'
 import "../styles/nprogress.css"
 import "../utils/i18n"
@@ -35,10 +36,12 @@ const MyApp = ({ Component,  pageProps }: AppProps) => {
     </Head>
       <QueryClientProvider client={queryClient}>
       <ChakraProvider theme={Theme}>
+          <Preloader>
         <Navbar />
         <CheckLogin/>
         <Component {...pageProps} />
         <Footer />
+        </Preloader>
     </ChakraProvider>
     </QueryClientProvider>
     </>
