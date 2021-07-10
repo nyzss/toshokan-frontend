@@ -6,22 +6,28 @@ const instance = axios.create({
   baseURL: "http://localhost:5000",
 });
 
-export const LoginAccount = async ({
-  email,
-  password,
-  setIsError,
-  setError,
-}: ILogin) => {
+export const LoginAccount = async (
+  { email, password }: ILogin,
+  setError: SetError,
+  toast: Toast
+) => {
   try {
-    const login = await instance.post("/auth/login", {
-      email,
-      password,
-    });
-
-    return login.data;
+    await instance
+      .post("/auth/login", {
+        email,
+        password,
+      })
+      .then(() => {
+        toast({
+          title: "Success.",
+          description: "You logged in!",
+          status: "success",
+          duration: 2500,
+          isClosable: true,
+        });
+      });
   } catch (error) {
     if (axios.isAxiosError(error)) {
-      setIsError(true);
       setError(error.response?.data);
       return error.response?.data;
     }

@@ -28,3 +28,11 @@ export const RegisterSchema = y.object().shape({
       "Please make sure that the password match."
     ),
 });
+
+export const LoginSchema = y.object().shape({
+  email: y
+    .string()
+    .email("Please enter a valid email.")
+    .required("Please enter an email."),
+  password: y.string().required("Please provide a password."),
+});

@@ -4,22 +4,22 @@ import {
   FormLabel,
   Input,
 } from "@chakra-ui/react";
-import { RegisterProps } from "../../../utils/types/auth";
+import { LoginProps } from "../../../utils/types/auth";
 
-const RegisterEmail: React.FC<RegisterProps> = ({ register, errors }) => {
+const LoginEmail: React.FC<LoginProps> = ({ register, email }) => {
   return (
     <>
-      <FormControl isInvalid={errors.email ? true : false}>
+      <FormControl isInvalid={email ? true : false}>
         <FormLabel>Email</FormLabel>
         <Input
           placeholder="toshokan@gmail.com"
           type="email"
           {...register("email")}
         />
-        <FormErrorMessage>{errors.email?.message}</FormErrorMessage>
+        <FormErrorMessage>{email?.message}</FormErrorMessage>
       </FormControl>
     </>
   );
 };
 
-export default RegisterEmail;
+export default LoginEmail;

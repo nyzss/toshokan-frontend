@@ -7,7 +7,18 @@ export type RegisterInputs = {
   passwordConfirmation: string;
 };
 
+export type LoginInputs = {
+  email: string;
+  password: string;
+};
+
 export interface RegisterProps {
   register: UseFormRegister<RegisterInputs>;
   errors: DeepMap<RegisterInputs, FieldError>;
+}
+
+export interface LoginProps {
+  register: UseFormRegister<LoginInputs>;
+  email?: FieldError | undefined;
+  password?: FieldError | undefined;
 }

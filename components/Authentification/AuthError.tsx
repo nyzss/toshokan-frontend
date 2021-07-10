@@ -1,5 +1,5 @@
 import { FormControl, FormErrorMessage } from "@chakra-ui/react";
-import { AuthErrorProps } from "../../../utils/types/components";
+import { AuthErrorProps } from "../../utils/types/components";
 
 const AuthError: React.FC<AuthErrorProps> = ({ error }) => {
   return (

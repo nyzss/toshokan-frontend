@@ -13,8 +13,7 @@ export interface PasswordInputProps {
 }
 
 export interface SubmitButtonProps {
-  submitText: string;
-  handleLogin: () => void;
+  isLoading: boolean;
 }
 
 export interface MobileDrawerProps {

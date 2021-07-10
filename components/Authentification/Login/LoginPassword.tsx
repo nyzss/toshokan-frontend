@@ -4,22 +4,22 @@ import {
   FormLabel,
   Input,
 } from "@chakra-ui/react";
-import { RegisterProps } from "../../../utils/types/auth";
+import { LoginProps } from "../../../utils/types/auth";
 
-const RegisterPassword: React.FC<RegisterProps> = ({ register, errors }) => {
+const LoginPassword: React.FC<LoginProps> = ({ register, password }) => {
   return (
     <>
-      <FormControl isInvalid={errors.password ? true : false}>
+      <FormControl isInvalid={password ? true : false}>
         <FormLabel>Password</FormLabel>
         <Input
           placeholder="********"
           type="password"
           {...register("password")}
         />
-        <FormErrorMessage>{errors.password?.message}</FormErrorMessage>
+        <FormErrorMessage>{password?.message}</FormErrorMessage>
       </FormControl>
     </>
   );
 };
 
-export default RegisterPassword;
+export default LoginPassword;
