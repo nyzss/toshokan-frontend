@@ -27,3 +27,7 @@ export interface ButtonProps {
 export interface IAuthNavButton {
   width?: string;
 }
+
+export interface AuthErrorProps {
+  error: string;
+}

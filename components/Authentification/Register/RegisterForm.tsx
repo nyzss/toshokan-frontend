@@ -1,10 +1,9 @@
 import {
   Box,
   Button,
-  FormControl,
-  FormErrorMessage,
   Stack,
   useColorModeValue,
+  useToast,
 } from "@chakra-ui/react";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useState } from "react";
@@ -14,12 +13,14 @@ import { userStore } from "../../../store/Store";
 import { RegisterAccount } from "../../../utils/api";
 import { RegisterSchema } from "../../../utils/schema";
 import { RegisterInputs } from "../../../utils/types/register";
+import AuthError from "../Fields/AuthError";
 import RegisterEmail from "./RegisterEmail";
 import RegisterPassword from "./RegisterPassword";
 import RegisterPasswordConfirmation from "./RegisterPasswordConfirmation";
 import RegisterUsername from "./RegisterUsername";
 
 const RegisterForm: React.FC = () => {
+  const toast = useToast();
   const [error, setError] = useState("");
 
   const { setUser } = userStore((state) => state);
@@ -37,6 +38,13 @@ const RegisterForm: React.FC = () => {
   const onSubmit: SubmitHandler<RegisterInputs> = async (data) => {
     await RegisterAccount(data, setError).then(() => {
       setUser();
+      toast({
+        title: "You successfully created your account.",
+        description: "Wecome to Toshokan!",
+        status: "success",
+        duration: 3500,
+        isClosable: true,
+      });
     });
   };
 
@@ -48,11 +56,7 @@ const RegisterForm: React.FC = () => {
           <RegisterEmail register={register} errors={errors} />
           <RegisterPassword register={register} errors={errors} />
           <RegisterPasswordConfirmation register={register} errors={errors} />
-          {error && (
-            <FormControl isInvalid>
-              <FormErrorMessage>{error}</FormErrorMessage>
-            </FormControl>
-          )}
+          <AuthError error={error} />
           <Button
             variant="ghost"
             bgColor={useColorModeValue("red.300", "red.300")}
