@@ -9,6 +9,7 @@ const Footer = () => (
     bgColor={useColorModeValue("gray.100", "gray.600")}
     bottom="0"
     width="100%"
+    position="relative"
   >
     <Stack>
       <Stack direction="row" spacing="4" align="center" justify="space-between">

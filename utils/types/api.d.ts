@@ -4,3 +4,12 @@ export interface ILogin {
   setIsError: Dispatch<SetStateAction<boolean>>;
   setError: Dispatch<SetStateAction<string>>;
 }
+
+export interface IRegister {
+  username: string;
+  email: string;
+  password: string;
+  passwordConfirmation: string;
+}
+
+export type SetError = Dispatch<SetStateAction<string>>;

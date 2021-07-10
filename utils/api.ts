@@ -1,5 +1,5 @@
 import axios from "axios";
-import { ILogin } from "./types/api";
+import { ILogin, IRegister, SetError } from "./types/api";
 
 const instance = axios.create({
   withCredentials: true,
@@ -42,4 +42,25 @@ export const HandleLogout = async () => {
   await instance.get("/auth/logout").then(() => {
     CheckLoggedIn();
   });
+};
+
+export const RegisterAccount = async (
+  { username, email, password, passwordConfirmation }: IRegister,
+  setError: SetError
+) => {
+  try {
+    await instance.post("/auth/register", {
+      username,
+      email,
+      password,
+      passwordConfirmation,
+    });
+  } catch (error) {
+    console.log(error);
+    if (axios.isAxiosError(error)) {
+      setError(error.response?.data);
+      return error.response?.data;
+    }
+    console.log(error);
+  }
 };

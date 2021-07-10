@@ -24,3 +24,6 @@ export interface MobileDrawerProps {
 export interface ButtonProps {
   size: string;
 }
+export interface IAuthNavButton {
+  width?: string;
+}

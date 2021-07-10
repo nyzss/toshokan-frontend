@@ -4,7 +4,6 @@ import LoginNavButton from "../NavButtons/LoginNavButton";
 import RegisterNavButton from "../NavButtons/RegisterNavButton";
 import AvatarNav from "../NavItems/Avatar";
 import DarkMode from "../NavItems/DarkMode";
-import NotificationBell from "../NavItems/NotificationBell";
 import SearchBar from "../NavItems/SearchBar";
 
 const NavRightPart: React.FC = () => {
@@ -22,7 +21,7 @@ const NavRightPart: React.FC = () => {
 
       <DarkMode />
 
-      <NotificationBell />
+      {/* <NotificationBell /> */}
 
       {user && <AvatarNav />}
 

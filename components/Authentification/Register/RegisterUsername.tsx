@@ -1,6 +1,6 @@
 import {
   FormControl,
-  FormHelperText,
+  FormErrorMessage,
   FormLabel,
   Input,
 } from "@chakra-ui/react";
@@ -9,10 +9,10 @@ import { RegisterProps } from "../../../utils/types/register";
 const RegisterUsername: React.FC<RegisterProps> = ({ register, errors }) => {
   return (
     <>
-      <FormControl>
+      <FormControl isInvalid={errors.username ? true : false}>
         <FormLabel>Username</FormLabel>
         <Input placeholder="Toshokan" {...register("username")} />
-        <FormHelperText>{errors.username?.message}</FormHelperText>
+        <FormErrorMessage>{errors.username?.message}</FormErrorMessage>
       </FormControl>
     </>
   );

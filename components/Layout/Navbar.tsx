@@ -2,7 +2,7 @@ import { Box, Flex, useColorModeValue } from "@chakra-ui/react";
 import NavLeftPart from "./NavParts/NavLeftPart";
 import NavRightPart from "./NavParts/NavRightPart";
 
-const Navbar = () => {
+const Navbar: React.FC = () => {
   return (
     <>
       <Box

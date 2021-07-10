@@ -1,6 +1,6 @@
 import {
   FormControl,
-  FormHelperText,
+  FormErrorMessage,
   FormLabel,
   Input,
 } from "@chakra-ui/react";
@@ -12,14 +12,16 @@ const RegisterPasswordConfirmation: React.FC<RegisterProps> = ({
 }) => {
   return (
     <>
-      <FormControl>
+      <FormControl isInvalid={errors.passwordConfirmation ? true : false}>
         <FormLabel>Password Confirmation</FormLabel>
         <Input
           placeholder="********"
           type="password"
           {...register("passwordConfirmation")}
         />
-        <FormHelperText>{errors.passwordConfirmation?.message}</FormHelperText>
+        <FormErrorMessage>
+          {errors.passwordConfirmation?.message}
+        </FormErrorMessage>
       </FormControl>
     </>
   );

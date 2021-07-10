@@ -39,6 +39,7 @@ const Theme = extendTheme({
       },
     },
     Input: {
+      baseStyle: {},
       sizes: {
         md: {
           field: {
@@ -46,16 +47,15 @@ const Theme = extendTheme({
           },
         },
       },
+      defaultProps: {
+        errorBorderColor: "red.500",
+      },
     },
   },
   fonts: {
     body: "Montserrat",
   },
-  // radii: {
-  //   sm: "0.125rem",
-  //   md: "0.125rem",
-  //   lg: "0.125rem",
-  // }, //might want to edit this later on lol
+  global: {},
 });
 
 export default Theme;

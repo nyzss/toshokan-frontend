@@ -1,7 +1,6 @@
 import { Box, Flex, Heading, Image, useColorModeValue } from "@chakra-ui/react";
 import { useTranslation } from "react-i18next";
 import RegisterForm from "./RegisterForm";
-// import { LoginForm } from "./LoginForm";
 
 const RegisterCard: React.FC = () => {
   const { t } = useTranslation();
