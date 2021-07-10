@@ -22,6 +22,7 @@ import RegisterUsername from "./RegisterUsername";
 const RegisterForm: React.FC = () => {
   const toast = useToast();
   const [error, setError] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   const { setUser } = userStore((state) => state);
 
@@ -36,16 +37,11 @@ const RegisterForm: React.FC = () => {
   });
 
   const onSubmit: SubmitHandler<RegisterInputs> = async (data) => {
-    await RegisterAccount(data, setError).then(() => {
-      setUser();
-      toast({
-        title: "You successfully created your account.",
-        description: "Wecome to Toshokan!",
-        status: "success",
-        duration: 3500,
-        isClosable: true,
-      });
+    setIsLoading(true);
+    await RegisterAccount(data, setError, toast).then(() => {
+      setIsLoading(false);
     });
+    await setUser();
   };
 
   return (
@@ -61,6 +57,7 @@ const RegisterForm: React.FC = () => {
             variant="ghost"
             bgColor={useColorModeValue("red.300", "red.300")}
             type="submit"
+            isLoading={isLoading}
           >
             {t("create-an-account")}
           </Button>

@@ -13,3 +13,7 @@ export interface IRegister {
 }
 
 export type SetError = Dispatch<SetStateAction<string>>;
+
+export type Toast = (
+  options?: UseToastOptions | undefined
+) => string | number | undefined;

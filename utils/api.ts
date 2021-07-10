@@ -1,5 +1,5 @@
 import axios from "axios";
-import { ILogin, IRegister, SetError } from "./types/api";
+import { ILogin, IRegister, SetError, Toast } from "./types/api";
 
 const instance = axios.create({
   withCredentials: true,
@@ -46,15 +46,26 @@ export const HandleLogout = async () => {
 
 export const RegisterAccount = async (
   { username, email, password, passwordConfirmation }: IRegister,
-  setError: SetError
+  setError: SetError,
+  toast: Toast
 ) => {
   try {
-    await instance.post("/auth/register", {
-      username,
-      email,
-      password,
-      passwordConfirmation,
-    });
+    await instance
+      .post("/auth/register", {
+        username,
+        email,
+        password,
+        passwordConfirmation,
+      })
+      .then(() => {
+        toast({
+          title: "You successfully created your account.",
+          description: "Wecome to Toshokan!",
+          status: "success",
+          duration: 3500,
+          isClosable: true,
+        });
+      });
   } catch (error) {
     console.log(error);
     if (axios.isAxiosError(error)) {
