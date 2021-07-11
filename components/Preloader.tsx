@@ -1,4 +1,10 @@
-import { Center, Fade, Flex, Spinner, useDisclosure } from "@chakra-ui/react";
+import {
+  Center,
+  Flex,
+  ScaleFade,
+  Spinner,
+  useDisclosure,
+} from "@chakra-ui/react";
 import { useEffect } from "react";
 import { userStore } from "../store/Store";
 
@@ -13,10 +19,15 @@ const Preloader: React.FC = ({ children }) => {
     onOpen: LoadingOnOpen,
   } = useDisclosure();
 
-  const { isOpen: ContentOpen, onOpen: ContentOnOpen } = useDisclosure();
+  const {
+    isOpen: ContentOpen,
+    onOpen: ContentOnOpen,
+    onClose: ContentOnClose,
+  } = useDisclosure();
 
   useEffect(() => {
     LoadingOnOpen();
+    ContentOnClose();
     const start = async () => {
       await setUser().then(() => {
         LoadingOnClose();
@@ -24,20 +35,18 @@ const Preloader: React.FC = ({ children }) => {
       });
     };
     start();
-  }, [LoadingOnClose, ContentOnOpen, LoadingOnOpen, setUser]);
+  }, [LoadingOnClose, ContentOnOpen, LoadingOnOpen, setUser, ContentOnClose]);
 
   return (
     <>
-      <Fade unmountOnExit in={LoadingOpen}>
+      <ScaleFade unmountOnExit in={LoadingOpen}>
         <Flex h="100vh" justifyContent="center" alignItems="center">
           <Center>
             <Spinner size="xl" />
           </Center>
         </Flex>
-      </Fade>
-      <Fade unmountOnExit in={ContentOpen}>
-        {children}
-      </Fade>
+      </ScaleFade>
+      <ScaleFade in={ContentOpen}>{children}</ScaleFade>
     </>
   );
 };
