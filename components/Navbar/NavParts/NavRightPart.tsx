@@ -1,5 +1,5 @@
 import { Box, HStack, useDisclosure } from "@chakra-ui/react";
-import { userStore } from "../../../store/Store";
+import { userStore } from "store/Store";
 import LoginNavButton from "../NavButtons/LoginNavButton";
 import RegisterNavButton from "../NavButtons/RegisterNavButton";
 import AvatarNav from "../NavItems/Avatar";

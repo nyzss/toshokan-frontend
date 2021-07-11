@@ -4,7 +4,7 @@ import {
   FormLabel,
   Input,
 } from "@chakra-ui/react";
-import { LoginProps } from "../../../utils/types/auth";
+import { LoginProps } from "utils/types/auth";
 
 const LoginPassword: React.FC<LoginProps> = ({ register, password }) => {
   return (

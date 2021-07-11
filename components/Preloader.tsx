@@ -7,7 +7,7 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import { useEffect } from "react";
-import { userStore } from "../store/Store";
+import { userStore } from "store/Store";
 
 // this is really weird, delete if necessary
 

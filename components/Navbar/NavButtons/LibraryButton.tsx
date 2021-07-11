@@ -2,7 +2,7 @@ import { Button } from "@chakra-ui/react";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
 import { IoLibrary } from "react-icons/io5";
-import { ButtonProps } from "../../../utils/types/components";
+import { ButtonProps } from "utils/types/components";
 
 const LibraryButton: React.FC<ButtonProps> = ({ size }) => {
   const { t } = useTranslation();

@@ -1,7 +1,7 @@
 import { MenuItem, useToast } from "@chakra-ui/react";
 import { useTranslation } from "react-i18next";
-import { userStore } from "../../../store/Store";
-import { HandleLogout } from "../../../utils/api";
+import { userStore } from "store/Store";
+import { HandleLogout } from "utils/api";
 
 const LogoutMenuItem: React.FC = () => {
   const toast = useToast();
