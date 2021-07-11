@@ -2,6 +2,7 @@ import {
   FormControl,
   FormHelperText,
   FormLabel,
+  Icon,
   Input,
   InputGroup,
   InputLeftElement,
@@ -21,18 +22,15 @@ const NovelSearchBar: React.FC<SearchbarProps> = () => {
         <FormLabel fontSize="xl">Search for a Novel</FormLabel>
         <InputGroup
           size="lg"
-          bgColor={useColorModeValue("gray.100", "dark.800")}
-          w={{ base: "80", sm: 2 / 3, md: 3 / 4, lg: 3 / 4 }}
+          w={{ base: 10 / 11, sm: "md", md: 3 / 4 }} //this is weird af lol
         >
           <InputLeftElement pointerEvents="none">
-            <AiOutlineSearch />
+            <Icon
+              as={AiOutlineSearch}
+              color={useColorModeValue("red.400", "red.300")}
+            />
           </InputLeftElement>
-          <Input
-            borderRadius="none"
-            borderColor="dark.100"
-            type="search"
-            placeholder={t("search")}
-          />
+          <Input borderRadius="none" type="search" placeholder={t("search")} />
         </InputGroup>
         <FormHelperText>
           If you ever come across a bug please report it!

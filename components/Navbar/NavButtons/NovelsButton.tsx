@@ -18,7 +18,7 @@ const NovelsButton: React.FC = () => {
   const { t } = useTranslation();
 
   return (
-    <Popover placement="bottom" isLazy>
+    <Popover placement="bottom">
       <PopoverTrigger>
         <Button
           bgColor={useColorModeValue("red.300", "red.400")}

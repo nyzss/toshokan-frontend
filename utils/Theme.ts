@@ -49,13 +49,13 @@ const Theme = extendTheme({
       },
       defaultProps: {
         errorBorderColor: "red.500",
+        focusBorderColor: "red.300",
       },
     },
   },
   fonts: {
     body: "Montserrat",
   },
-  global: {},
 });
 
 export default Theme;

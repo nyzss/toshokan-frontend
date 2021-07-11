@@ -14,7 +14,7 @@ export interface InfoNovelCardProps {
 
 const InfoNovelCard: React.FC<InfoNovelCardProps> = ({
   coverUrl,
-  novel: { title, description },
+  novel: { title, description, author },
 }) => {
   return (
     <>
@@ -29,8 +29,9 @@ const InfoNovelCard: React.FC<InfoNovelCardProps> = ({
               src={coverUrl}
               alt="novel cover"
               bgSize="cover"
-              h="64"
+              h="72"
               m="4"
+              mb="0"
               rounded="sm"
             />
           </Box>
@@ -47,13 +48,18 @@ const InfoNovelCard: React.FC<InfoNovelCardProps> = ({
 
             <Text
               fontSize={{ base: "2xl", md: "3xl" }}
-              color={useColorModeValue("gray.800", "white")}
+              color={useColorModeValue("gray.900", "white")}
               fontWeight="bold"
             >
               {title}
-              <Text color={useColorModeValue("brand.600", "brand.400")}>
-                Idea
-              </Text>
+            </Text>
+            <Text
+              fontSize={{ base: "1xl", md: "3xl" }}
+              fontWeight="medium"
+              mt="1"
+              color={useColorModeValue("gray.500", "gray.200")}
+            >
+              {author}
             </Text>
             <Text
               mt={4}

@@ -83,6 +83,10 @@ export const RegisterAccount = async (
 };
 
 export const HomeNovels = async () => {
-  const novels = await instance.get("/novel");
-  return novels.data;
+  try {
+    const novels = await instance.get("/novel");
+    return novels.data;
+  } catch (error) {
+    console.log(error);
+  }
 };
