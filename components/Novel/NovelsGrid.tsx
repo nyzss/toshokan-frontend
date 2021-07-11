@@ -1,10 +1,30 @@
 import { SimpleGrid } from "@chakra-ui/react";
+import { useQuery } from "react-query";
+import { HomeNovels } from "utils/api";
+import InfoNovelCard from "./InfoNovelCard";
 import NovelCard from "./NovelCard";
-import NovelCard3 from "./NovelCard3";
 
 export interface NovelsGridProps {}
 
+export interface INovels {
+  title: string;
+  author: string;
+  description: string;
+  id: string;
+  totalReader: number;
+  createdAt: string;
+  updatedAt: string;
+}
+
 const NovelsGrid: React.FC<NovelsGridProps> = () => {
+  const { data: novelData, isFetched, isLoading, isFetching } = useQuery(
+    "home-novels",
+    HomeNovels,
+    {
+      staleTime: 30 * 60 * 1000, //refreshing every 30 minutes
+    }
+  );
+
   return (
     <>
       <SimpleGrid
@@ -13,21 +33,17 @@ const NovelsGrid: React.FC<NovelsGridProps> = () => {
         mx="6"
         spacing="40px"
       >
-        <NovelCard coverUrl={first} />
-        <NovelCard coverUrl={second} />
-        <NovelCard coverUrl={second} />
-        <NovelCard coverUrl={first} />
-        <NovelCard coverUrl={second} />
-        <NovelCard coverUrl={first} />
+        {novelData &&
+          novelData.data.map((novel: INovels) => (
+            <NovelCard key={novel.id} coverUrl={first} novel={novel} />
+          ))}
       </SimpleGrid>
 
       <SimpleGrid mx="2" spacing="12" display={{ base: "grid", md: "none" }}>
-        <NovelCard3 coverUrl={first} />
-        <NovelCard3 coverUrl={second} />
-        <NovelCard3 coverUrl={second} />
-        <NovelCard3 coverUrl={first} />
-        <NovelCard3 coverUrl={second} />
-        <NovelCard3 coverUrl={first} />
+        {novelData &&
+          novelData.data.map((novel: INovels) => (
+            <InfoNovelCard key={novel.id} coverUrl={first} novel={novel} />
+          ))}
       </SimpleGrid>
     </>
   );

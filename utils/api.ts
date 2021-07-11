@@ -81,3 +81,8 @@ export const RegisterAccount = async (
     console.log(error);
   }
 };
+
+export const HomeNovels = async () => {
+  const novels = await instance.get("/novel");
+  return novels.data;
+};

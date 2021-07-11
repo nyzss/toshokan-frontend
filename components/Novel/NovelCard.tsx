@@ -1,10 +1,15 @@
 import { Badge, Box, Flex, Image, useColorModeValue } from "@chakra-ui/react";
+import { INovels } from "./NovelsGrid";
 
 export interface NovelCardProps {
   coverUrl: string;
+  novel: INovels;
 }
 
-const NovelCard: React.FC<NovelCardProps> = ({ coverUrl }) => {
+const NovelCard: React.FC<NovelCardProps> = ({
+  coverUrl,
+  novel: { title, description, totalReader },
+}) => {
   return (
     <>
       <Flex w="full" alignItems="center" justifyContent="center">
@@ -13,7 +18,7 @@ const NovelCard: React.FC<NovelCardProps> = ({ coverUrl }) => {
           maxW="sm"
           borderWidth="1px"
           rounded="md"
-          shadow="lg"
+          shadow="xl"
         >
           <Image
             src={coverUrl}
@@ -36,7 +41,7 @@ const NovelCard: React.FC<NovelCardProps> = ({ coverUrl }) => {
                 textTransform="uppercase"
                 ml="2"
               >
-                this is a test textext
+                {totalReader}
               </Box>
             </Box>
 
@@ -47,13 +52,10 @@ const NovelCard: React.FC<NovelCardProps> = ({ coverUrl }) => {
               lineHeight="tight"
               isTruncated
             >
-              This is a novel title
+              {title}
             </Box>
 
-            <Box>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius
-              unde iure quibusdam!
-            </Box>
+            <Box>{description.substring(0, 130)}...</Box>
 
             {/* <Box d="flex" mt="2" alignItems="center">
                 {Array(5)

@@ -6,15 +6,24 @@ import {
   Text,
   useColorModeValue,
 } from "@chakra-ui/react";
-export interface NovelCard3Props {
+import { INovels } from "./NovelsGrid";
+export interface InfoNovelCardProps {
   coverUrl: string;
+  novel: INovels;
 }
 
-const NovelCard3: React.FC<NovelCard3Props> = ({ coverUrl }) => {
+const InfoNovelCard: React.FC<InfoNovelCardProps> = ({
+  coverUrl,
+  novel: { title, description },
+}) => {
   return (
     <>
       <Flex w="full" alignItems="center" justifyContent="center">
-        <Box bg={useColorModeValue("white", "gray.700")} rounded="sm">
+        <Box
+          bg={useColorModeValue("white", "gray.700")}
+          shadow="2xl"
+          rounded="sm"
+        >
           <Box>
             <Image
               src={coverUrl}
@@ -41,16 +50,17 @@ const NovelCard3: React.FC<NovelCard3Props> = ({ coverUrl }) => {
               color={useColorModeValue("gray.800", "white")}
               fontWeight="bold"
             >
-              Build Your New{" "}
+              {title}
               <Text color={useColorModeValue("brand.600", "brand.400")}>
                 Idea
               </Text>
             </Text>
-            <Text mt={4} color={useColorModeValue("gray.600", "gray.400")}>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem
-              modi reprehenderit vitae exercitationem aliquid dolores ullam
-              temporibus enim expedita aperiam mollitia iure consectetur dicta
-              tenetur, porro consequuntur saepe accusantium consequatur.
+            <Text
+              mt={4}
+              fontSize="lg"
+              color={useColorModeValue("gray.600", "gray.400")}
+            >
+              {description.substring(0, 130)}...
             </Text>
           </Box>
         </Box>
@@ -59,4 +69,4 @@ const NovelCard3: React.FC<NovelCard3Props> = ({ coverUrl }) => {
   );
 };
 
-export default NovelCard3;
+export default InfoNovelCard;
