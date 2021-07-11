@@ -1,7 +1,8 @@
 import { Container } from "@chakra-ui/react";
+import NovelSearchBar from "components/Novel/NovelSearchBar";
+import NovelsGrid from "components/Novel/NovelsGrid";
 import Head from "next/head";
 import React from "react";
-import NovelsGrid from "../components/Novel/NovelsGrid";
 
 const Home: React.FC = () => {
   return (
@@ -11,6 +12,7 @@ const Home: React.FC = () => {
       </Head>
 
       <Container my="16" maxW="5xl">
+        <NovelSearchBar />
         <NovelsGrid />
       </Container>
     </>

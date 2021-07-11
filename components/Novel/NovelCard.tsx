@@ -17,14 +17,15 @@ const NovelCard: React.FC<NovelCardProps> = ({ coverUrl }) => {
         >
           <Image
             src={coverUrl}
-            // objectFit="cover"
+            objectFit="cover"
             alt="novel cover"
             roundedTop="sm"
+            boxSize="96"
           />
 
-          <Box p="6">
+          <Box py="6" px="4">
             <Box d="flex" alignItems="baseline">
-              <Badge rounded="full" px="2" colorScheme="pink">
+              <Badge px="3" colorScheme="pink">
                 New
               </Badge>
               <Box
@@ -40,7 +41,7 @@ const NovelCard: React.FC<NovelCardProps> = ({ coverUrl }) => {
             </Box>
 
             <Box
-              mt="1"
+              my="2"
               fontWeight="semibold"
               as="h4"
               lineHeight="tight"

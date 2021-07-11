@@ -3,6 +3,7 @@ import {
   Flex,
   ScaleFade,
   Spinner,
+  Text,
   useDisclosure,
 } from "@chakra-ui/react";
 import { useEffect } from "react";
@@ -43,6 +44,7 @@ const Preloader: React.FC = ({ children }) => {
         <Flex h="100vh" justifyContent="center" alignItems="center">
           <Center>
             <Spinner size="xl" />
+            <Text>Hello!</Text>
           </Center>
         </Flex>
       </ScaleFade>
