@@ -30,7 +30,6 @@ const CoverUpload: React.FC<CoverUploadProps> = () => {
               mx="auto"
               boxSize={12}
               color={useColorModeValue("gray.400", "gray.500")}
-              aria-hidden="true"
               as={IoImageOutline}
             />
             <Flex
@@ -41,7 +40,7 @@ const CoverUpload: React.FC<CoverUploadProps> = () => {
               <Text cursor="pointer" rounded="md" fontSize="md" pos="relative">
                 Upload a file
                 <VisuallyHidden>
-                  <input id="file-upload" name="file-upload" type="file" />
+                  <input type="file" />
                 </VisuallyHidden>
               </Text>
               <Text pl={1}>or drag and drop</Text>
