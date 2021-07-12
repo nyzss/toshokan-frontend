@@ -17,13 +17,9 @@ import Theme from "../utils/Theme"
 
 const queryClient = new QueryClient()
 
-Router.events.on('routeChangeStart', (url) => {
-  console.log(`Loading: ${url}`)
-  nprogress.start()
-})
+Router.events.on('routeChangeStart', (url) => nprogress.start())
 Router.events.on('routeChangeComplete', () => nprogress.done())
 Router.events.on('routeChangeError', () => nprogress.done())
-
 nprogress.configure({
   showSpinner: false
 })
