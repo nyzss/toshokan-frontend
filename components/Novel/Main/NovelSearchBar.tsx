@@ -6,8 +6,10 @@ import {
   Input,
   InputGroup,
   InputLeftElement,
+  Text,
   useColorModeValue,
 } from "@chakra-ui/react";
+import Link from "next/link";
 import { useTranslation } from "react-i18next";
 import { AiOutlineSearch } from "react-icons/ai";
 
@@ -33,7 +35,13 @@ const NovelSearchBar: React.FC<SearchbarProps> = () => {
           <Input borderRadius="none" type="search" placeholder={t("search")} />
         </InputGroup>
         <FormHelperText>
-          If you ever come across a bug please report it!
+          {/* If you ever come across a bug please report it! */}
+          Not finding the novel you wanted?{" "}
+          <Link href="/novels/add" passHref>
+            <Text as="span" cursor="pointer" color="red.300">
+              Add it!
+            </Text>
+          </Link>
         </FormHelperText>
       </FormControl>
     </>

@@ -1,4 +1,11 @@
-import { Box, Flex, Heading, Image, useColorModeValue } from "@chakra-ui/react";
+import {
+  Box,
+  Flex,
+  Heading,
+  Image,
+  Text,
+  useColorModeValue,
+} from "@chakra-ui/react";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
@@ -28,7 +35,7 @@ const Register: React.FC = () => {
         py="12"
         px={{ base: "4", lg: "8" }}
       >
-        <Box maxW="md" w="md" mx="auto">
+        <Box maxW="lg" w="lg" mx="auto">
           <Image src="/128x.png" borderRadius="lg" alt="logo" mx="auto" />
           <Heading
             mt="4x"
@@ -37,12 +44,21 @@ const Register: React.FC = () => {
             size="xl"
             fontWeight="extrabold"
           >
-            {t("welcome-sign-up")}
+            <Heading
+              bgClip="text"
+              bgGradient="linear(to-r, red.400,pink.400)"
+              my="4"
+            >
+              {t("welcome-sign-up")}
+              <Text as={"span"} bgClip="text">
+                !
+              </Text>
+            </Heading>
           </Heading>
           <Box
             bg={useColorModeValue("white", "gray.700")}
-            py="8"
-            px={{ base: "8", md: "10" }}
+            py="10"
+            px={{ base: "6", sm: "14" }}
             shadow="base"
           >
             <RegisterForm />

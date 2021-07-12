@@ -1,6 +1,6 @@
 import { Container } from "@chakra-ui/react";
-import NovelSearchBar from "components/Novel/NovelSearchBar";
-import NovelsGrid from "components/Novel/NovelsGrid";
+import NovelSearchBar from "components/Novel/Main/NovelSearchBar";
+import NovelsGrid from "components/Novel/Main/NovelsGrid";
 import Head from "next/head";
 import React from "react";
 

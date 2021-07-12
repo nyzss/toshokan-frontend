@@ -55,7 +55,7 @@ const RegisterForm: React.FC = () => {
           <AuthError error={error} />
           <Button
             variant="ghost"
-            bgColor={useColorModeValue("red.300", "red.300")}
+            bgColor={useColorModeValue("red.300", "red.400")}
             type="submit"
             isLoading={isLoading}
           >

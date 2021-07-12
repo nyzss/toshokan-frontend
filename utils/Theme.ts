@@ -52,6 +52,12 @@ const Theme = extendTheme({
         focusBorderColor: "red.300",
       },
     },
+    Textarea: {
+      defaultProps: {
+        errorBorderColor: "red.500",
+        focusBorderColor: "red.300",
+      },
+    },
   },
   fonts: {
     body: "Montserrat",
