@@ -1,22 +1,11 @@
 import { SimpleGrid } from "@chakra-ui/react";
 import { useQuery } from "react-query";
 import { HomeNovels } from "utils/api";
+import { INovels } from "utils/types/types";
 import InfoNovelCard from "./InfoNovelCard";
 import NovelCard from "./NovelCard";
 
-export interface NovelsGridProps {}
-
-export interface INovels {
-  title: string;
-  author: string;
-  description: string;
-  id: string;
-  totalReader: number;
-  createdAt: string;
-  updatedAt: string;
-}
-
-const NovelsGrid: React.FC<NovelsGridProps> = () => {
+const NovelsGrid: React.FC = () => {
   const { data: novelData, isFetched, isLoading, isFetching } = useQuery(
     "home-novels",
     HomeNovels,
@@ -35,14 +24,14 @@ const NovelsGrid: React.FC<NovelsGridProps> = () => {
       >
         {novelData &&
           novelData.data.map((novel: INovels) => (
-            <NovelCard key={novel.id} coverUrl={first} novel={novel} />
+            <NovelCard key={novel.id} novel={novel} />
           ))}
       </SimpleGrid>
 
       <SimpleGrid mx="2" spacing="12" display={{ base: "grid", md: "none" }}>
         {novelData &&
           novelData.data.map((novel: INovels) => (
-            <InfoNovelCard key={novel.id} coverUrl={first} novel={novel} />
+            <InfoNovelCard key={novel.id} novel={novel} />
           ))}
       </SimpleGrid>
     </>

@@ -1,3 +1,5 @@
+import { INovels } from "./types";
+
 export interface EmailInputProps {
   inputColor: string;
   email: string;
@@ -29,4 +31,8 @@ export interface IAuthNavButton {
 
 export interface AuthErrorProps {
   error: string;
+}
+
+export interface NovelCardProps {
+  novel: INovels;
 }

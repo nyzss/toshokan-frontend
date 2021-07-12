@@ -1,14 +1,8 @@
 import { Badge, Box, Flex, Image, useColorModeValue } from "@chakra-ui/react";
-import { INovels } from "./NovelsGrid";
-
-export interface NovelCardProps {
-  coverUrl: string;
-  novel: INovels;
-}
+import { NovelCardProps } from "utils/types/components";
 
 const NovelCard: React.FC<NovelCardProps> = ({
-  coverUrl,
-  novel: { title, description, totalReader },
+  novel: { title, description, totalReader, coverUrl },
 }) => {
   return (
     <>

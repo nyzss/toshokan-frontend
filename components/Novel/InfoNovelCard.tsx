@@ -6,15 +6,10 @@ import {
   Text,
   useColorModeValue,
 } from "@chakra-ui/react";
-import { INovels } from "./NovelsGrid";
-export interface InfoNovelCardProps {
-  coverUrl: string;
-  novel: INovels;
-}
+import { NovelCardProps } from "utils/types/components";
 
-const InfoNovelCard: React.FC<InfoNovelCardProps> = ({
-  coverUrl,
-  novel: { title, description, author },
+const InfoNovelCard: React.FC<NovelCardProps> = ({
+  novel: { title, description, author, coverUrl },
 }) => {
   return (
     <>
