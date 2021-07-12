@@ -1,4 +1,5 @@
 import { Box, Container, Stack, useColorModeValue } from "@chakra-ui/react";
+import Author from "./Author";
 import CoverUpload from "./CoverUpload";
 import Description from "./Description";
 import Title from "./Title";
@@ -18,6 +19,7 @@ const AddNovelForm: React.FC<AddNovelFormProps> = () => {
         >
           <Stack spacing="6">
             <Title />
+            <Author />
             <Description />
             <CoverUpload />
           </Stack>
