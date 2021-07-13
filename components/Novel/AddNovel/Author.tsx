@@ -11,7 +11,7 @@ export interface AuthorProps {}
 const Author: React.FC<AuthorProps> = () => {
   return (
     <>
-      <FormControl>
+      <FormControl mr="4">
         <FormLabel>
           Author <Icon color="red.300" as={FaUserNinja} />
         </FormLabel>

@@ -9,16 +9,15 @@ import {
   NumberInputField,
   NumberInputStepper,
 } from "@chakra-ui/react";
-import { BiBook } from "react-icons/bi";
+import { BiCalendarAlt } from "react-icons/bi";
+export interface ReleaseDateProps {}
 
-export interface ChapterProps {}
-
-const Chapter: React.FC<ChapterProps> = () => {
+const ReleaseDate: React.FC<ReleaseDateProps> = () => {
   return (
     <>
-      <FormControl mr="4">
+      <FormControl>
         <FormLabel>
-          Chapters <Icon color="red.300" as={BiBook} />
+          Release Year <Icon color="red.300" as={BiCalendarAlt} />
         </FormLabel>
         <NumberInput max={20000}>
           <NumberInputField />
@@ -28,12 +27,13 @@ const Chapter: React.FC<ChapterProps> = () => {
           </NumberInputStepper>
         </NumberInput>
         <FormHelperText>
-          The number of total chapter the novel currently. If unsure leave blank
-          or 0.
+          {
+            "The year when the Novel was released. If unsure just put the first volume/chapter's release date."
+          }
         </FormHelperText>
       </FormControl>
     </>
   );
 };
 
-export default Chapter;
+export default ReleaseDate;

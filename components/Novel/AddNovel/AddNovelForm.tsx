@@ -1,6 +1,7 @@
 import {
   Box,
   Container,
+  Flex,
   Stack,
   Tab,
   TabList,
@@ -16,6 +17,7 @@ import CoverUpload from "./CoverUpload";
 import CoverUrl from "./CoverUrl";
 import Description from "./Description";
 import Language from "./Language";
+import ReleaseDate from "./ReleaseDate";
 import Status from "./Status";
 import Title from "./Title";
 import Type from "./Type";
@@ -28,18 +30,23 @@ const AddNovelForm: React.FC<AddNovelFormProps> = () => {
       <Container>
         <Box
           bgColor={useColorModeValue("white", "gray.700")}
-          w={{ base: "xl", md: "2xl", lg: "2xl" }}
-          p="12"
+          w={{ md: "2xl", lg: "3xl" }}
+          p={{ base: 4, sm: 8, md: 12 }}
           my="12"
           shadow="2xl"
         >
           <Stack spacing="6">
             <Title />
-            <Author />
-            <Artist />
+            <Flex justifyContent="center">
+              <Author />
+              <Artist />
+            </Flex>
             <Description />
             <Language />
-            <Chapter />
+            <Flex justifyContent="center">
+              <Chapter />
+              <ReleaseDate />
+            </Flex>
             <Type />
             <Status />
             <Tabs colorScheme="toshokan">
