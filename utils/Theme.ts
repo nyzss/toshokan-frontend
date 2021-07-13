@@ -3,15 +3,16 @@ import { extendTheme } from "@chakra-ui/react";
 const Theme = extendTheme({
   colors: {
     toshokan: {
-      100: "#colorhere", // fuck i forgot colors
-      200: "#colorhere",
-      300: "#colorhere",
-      400: "#colorhere",
-      500: "#colorhere",
-      600: "#colorhere",
-      700: "#colorhere",
-      800: "#colorhere",
-      900: "#colorhere",
+      50: "#FFF5F5",
+      100: "#FED7D7",
+      200: "#FEB2B2",
+      300: "#FC8181",
+      400: "#F56565",
+      500: "#FC8181",
+      600: "#F56565",
+      700: "#F56565",
+      800: "#F56565",
+      900: "#F56565",
     },
     dark: {
       100: "#686864",
@@ -53,6 +54,18 @@ const Theme = extendTheme({
       },
     },
     Textarea: {
+      defaultProps: {
+        errorBorderColor: "red.500",
+        focusBorderColor: "red.300",
+      },
+    },
+    NumberInput: {
+      defaultProps: {
+        errorBorderColor: "red.500",
+        focusBorderColor: "red.300",
+      },
+    },
+    Select: {
       defaultProps: {
         errorBorderColor: "red.500",
         focusBorderColor: "red.300",

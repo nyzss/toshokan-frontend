@@ -1,8 +1,24 @@
-import { Box, Container, Stack, useColorModeValue } from "@chakra-ui/react";
+import {
+  Box,
+  Container,
+  Stack,
+  Tab,
+  TabList,
+  TabPanel,
+  TabPanels,
+  Tabs,
+  useColorModeValue,
+} from "@chakra-ui/react";
+import Artist from "./Artist";
 import Author from "./Author";
+import Chapter from "./Chapter";
 import CoverUpload from "./CoverUpload";
+import CoverUrl from "./CoverUrl";
 import Description from "./Description";
+import Language from "./Language";
+import Status from "./Status";
 import Title from "./Title";
+import Type from "./Type";
 
 export interface AddNovelFormProps {}
 
@@ -20,8 +36,26 @@ const AddNovelForm: React.FC<AddNovelFormProps> = () => {
           <Stack spacing="6">
             <Title />
             <Author />
+            <Artist />
             <Description />
-            <CoverUpload />
+            <Language />
+            <Chapter />
+            <Type />
+            <Status />
+            <Tabs colorScheme="toshokan">
+              <TabList>
+                <Tab>Upload a cover</Tab>
+                <Tab>Link a cover</Tab>
+              </TabList>
+              <TabPanels>
+                <TabPanel>
+                  <CoverUpload />
+                </TabPanel>
+                <TabPanel>
+                  <CoverUrl />
+                </TabPanel>
+              </TabPanels>
+            </Tabs>
           </Stack>
         </Box>
       </Container>

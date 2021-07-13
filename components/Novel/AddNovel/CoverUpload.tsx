@@ -8,6 +8,7 @@ import {
   useColorModeValue,
   VisuallyHidden,
 } from "@chakra-ui/react";
+import { BsImage } from "react-icons/bs";
 import { IoImageOutline } from "react-icons/io5";
 export interface CoverUploadProps {}
 
@@ -15,7 +16,9 @@ const CoverUpload: React.FC<CoverUploadProps> = () => {
   return (
     <>
       <FormControl>
-        <FormLabel>Novel Cover</FormLabel>
+        <FormLabel>
+          Novel Cover <Icon color="red.300" as={BsImage} />
+        </FormLabel>
         <Flex
           mt={1}
           justify="center"

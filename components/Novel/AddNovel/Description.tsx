@@ -2,8 +2,10 @@ import {
   FormControl,
   FormHelperText,
   FormLabel,
+  Icon,
   Textarea,
 } from "@chakra-ui/react";
+import { GrTextAlignLeft } from "react-icons/gr";
 import autosize from "react-textarea-autosize";
 export interface NovelDescriptionProps {}
 
@@ -11,7 +13,9 @@ const NovelDescription: React.FC<NovelDescriptionProps> = () => {
   return (
     <>
       <FormControl>
-        <FormLabel>Description</FormLabel>
+        <FormLabel>
+          Description <Icon color="red.300" as={GrTextAlignLeft} />
+        </FormLabel>
         <Textarea
           placeholder="Description"
           transition="height none"
