@@ -9,16 +9,20 @@ import {
 } from "@chakra-ui/react";
 import { IoMdCheckmark } from "react-icons/io";
 import { Status as EStatus } from "utils/enums";
-export interface StatusProps {}
+import { NovelProps } from "../../../utils/types/novel";
 
-const Status: React.FC<StatusProps> = () => {
+const Status: React.FC<NovelProps> = ({ register, errors }) => {
   return (
     <>
       <FormControl>
         <FormLabel>
           Status <Icon color="red.300" as={IoMdCheckmark} />
         </FormLabel>
-        <RadioGroup colorScheme="toshokan" defaultValue="Ongoing">
+        <RadioGroup
+          colorScheme="toshokan"
+          defaultValue="Ongoing"
+          {...register("status")}
+        >
           <Stack direction={["column", "row"]} spacing="24px">
             {EStatus.map((status) => (
               <Radio key={status} value={status}>

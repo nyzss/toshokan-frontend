@@ -3,30 +3,19 @@ import {
   FormHelperText,
   FormLabel,
   Icon,
-  NumberDecrementStepper,
-  NumberIncrementStepper,
-  NumberInput,
-  NumberInputField,
-  NumberInputStepper,
+  Input,
 } from "@chakra-ui/react";
 import { BiBook } from "react-icons/bi";
+import { NovelProps } from "../../../utils/types/novel";
 
-export interface ChapterProps {}
-
-const Chapter: React.FC<ChapterProps> = () => {
+const Chapter: React.FC<NovelProps> = ({ register, errors }) => {
   return (
     <>
       <FormControl mr="4">
         <FormLabel>
           Chapters <Icon color="red.300" as={BiBook} />
         </FormLabel>
-        <NumberInput max={20000}>
-          <NumberInputField />
-          <NumberInputStepper>
-            <NumberIncrementStepper />
-            <NumberDecrementStepper />
-          </NumberInputStepper>
-        </NumberInput>
+        <Input type="number" {...register("chapter")} max="20000" />
         <FormHelperText>
           The number of total chapter the novel currently. If unsure leave blank
           or 0.

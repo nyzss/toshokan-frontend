@@ -23,7 +23,9 @@ const AddNovel: React.FC = () => {
           Thank you for taking the time to contribute to this small project.
           Your first addition will be reviewed, and later on if no problem
           arises, you will be able to add novels without restriction.
-          <Divider my="4" />
+        </Text>
+        <Divider my="4" />
+        <Text>
           If you run into problems please contact me on discord:{" "}
           <Text color="red.300" as="span" cursor="pointer" onClick={onCopy}>
             {hasCopied ? "Copied!" : discord}

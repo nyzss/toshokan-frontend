@@ -6,16 +6,16 @@ import {
   Input,
 } from "@chakra-ui/react";
 import { BsImage } from "react-icons/bs";
-export interface CoverUrlProps {}
+import { NovelProps } from "../../../utils/types/novel";
 
-const CoverUrl: React.FC<CoverUrlProps> = () => {
+const CoverUrl: React.FC<NovelProps> = ({ register, errors }) => {
   return (
     <>
       <FormControl>
         <FormLabel>
           Cover URL <Icon color="red.300" as={BsImage} />
         </FormLabel>
-        <Input placeholder="Cover url" />
+        <Input placeholder="Cover url" {...register("coverUrl")} />
         <FormHelperText>
           The cover URL for the novel, if none leave blank.
         </FormHelperText>

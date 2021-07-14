@@ -37,7 +37,9 @@ const AddNovelForm: React.FC = () => {
     resolver: yupResolver(NovelSchema),
   });
 
-  const onSubmit: SubmitHandler<INovels> = async () => {};
+  const onSubmit: SubmitHandler<INovels> = async (data) => {
+    console.log(data);
+  };
 
   return (
     <>
@@ -60,11 +62,11 @@ const AddNovelForm: React.FC = () => {
             <Description register={register} errors={errors} />
             <Language register={register} errors={errors} />
             <Flex justifyContent="center">
-              <Chapter />
-              <ReleaseDate />
+              <Chapter register={register} errors={errors} />
+              <ReleaseDate register={register} errors={errors} />
             </Flex>
-            <Type />
-            <Status />
+            <Type register={register} errors={errors} />
+            <Status register={register} errors={errors} />
             <Tabs colorScheme="toshokan">
               <TabList>
                 <Tab>Upload a cover</Tab>
@@ -75,12 +77,15 @@ const AddNovelForm: React.FC = () => {
                   <CoverUpload />
                 </TabPanel>
                 <TabPanel>
-                  <CoverUrl />
+                  <CoverUrl register={register} errors={errors} />
                 </TabPanel>
               </TabPanels>
             </Tabs>
           </Stack>
-          <Button bgColor={useColorModeValue("red.300", "red.400")}>
+          <Button
+            type="submit"
+            bgColor={useColorModeValue("red.300", "red.400")}
+          >
             Submit Novel
           </Button>
         </Box>
