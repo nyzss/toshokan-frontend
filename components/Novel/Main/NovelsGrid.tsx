@@ -1,7 +1,7 @@
 import { SimpleGrid } from "@chakra-ui/react";
 import { useQuery } from "react-query";
 import { HomeNovels } from "utils/api";
-import { INovels } from "utils/types/types";
+import { INovels } from "utils/types/novel";
 import InfoNovelCard from "./InfoNovelCard";
 import NovelCard from "./NovelCard";
 

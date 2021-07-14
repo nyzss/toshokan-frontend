@@ -6,16 +6,16 @@ import {
   Input,
 } from "@chakra-ui/react";
 import { RiBookReadLine } from "react-icons/ri";
-export interface NovelTitleProps {}
+import { NovelProps } from "utils/types/novel";
 
-const NovelTitle: React.FC<NovelTitleProps> = () => {
+const NovelTitle: React.FC<NovelProps> = ({ register, errors }) => {
   return (
     <>
       <FormControl>
         <FormLabel>
           Title <Icon color="red.300" as={RiBookReadLine} />
         </FormLabel>
-        <Input placeholder="Title" />
+        <Input placeholder="Title" {...register("title")} />
         <FormHelperText>The title of the novel.</FormHelperText>
       </FormControl>
     </>

@@ -7,9 +7,9 @@ import {
 } from "@chakra-ui/react";
 import { IoLanguage } from "react-icons/io5";
 import { Languages } from "utils/enums";
-export interface LanguageProps {}
+import { NovelProps } from "../../../utils/types/novel";
 
-const Language: React.FC<LanguageProps> = () => {
+const Language: React.FC<NovelProps> = ({ register, errors }) => {
   return (
     <>
       <FormControl>
@@ -17,7 +17,7 @@ const Language: React.FC<LanguageProps> = () => {
           {"Select the novel's language"}{" "}
           <Icon color="red.300" as={IoLanguage} />
         </FormLabel>
-        <Select placeholder="">
+        <Select placeholder="" {...register("language")}>
           {Languages.map((lang) => (
             <option key={lang} value={lang}>
               {lang}

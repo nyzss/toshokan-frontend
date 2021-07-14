@@ -7,9 +7,9 @@ import {
 } from "@chakra-ui/react";
 import { GrTextAlignLeft } from "react-icons/gr";
 import autosize from "react-textarea-autosize";
-export interface NovelDescriptionProps {}
+import { NovelProps } from "../../../utils/types/novel";
 
-const NovelDescription: React.FC<NovelDescriptionProps> = () => {
+const NovelDescription: React.FC<NovelProps> = ({ register, errors }) => {
   return (
     <>
       <FormControl>
@@ -22,6 +22,7 @@ const NovelDescription: React.FC<NovelDescriptionProps> = () => {
           as={autosize}
           minRows={9}
           maxRows={24}
+          {...register("description")}
         />
         <FormHelperText>
           The description or synopsis of the novel.

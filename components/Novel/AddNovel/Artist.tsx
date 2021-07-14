@@ -6,16 +6,16 @@ import {
   Input,
 } from "@chakra-ui/react";
 import { BiPaint } from "react-icons/bi";
-export interface ArtistProps {}
+import { NovelProps } from "../../../utils/types/novel";
 
-const Artist: React.FC<ArtistProps> = () => {
+const Artist: React.FC<NovelProps> = ({ register, errors }) => {
   return (
     <>
       <FormControl>
         <FormLabel>
           Artist <Icon color="red.300" as={BiPaint} />
         </FormLabel>
-        <Input placeholder="Artist" />
+        <Input placeholder="Artist" {...register("artist")} />
         <FormHelperText>
           The artist for the cover of this novel. (Leave blank if unknown)
         </FormHelperText>

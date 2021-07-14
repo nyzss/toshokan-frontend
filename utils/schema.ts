@@ -36,3 +36,5 @@ export const LoginSchema = y.object().shape({
     .required("Please enter an email."),
   password: y.string().required("Please provide a password."),
 });
+
+export const NovelSchema = y.object().shape({});

@@ -11,6 +11,10 @@ import {
   Tabs,
   useColorModeValue,
 } from "@chakra-ui/react";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { SubmitHandler, useForm } from "react-hook-form";
+import { NovelSchema } from "utils/schema";
+import { INovels } from "utils/types/novel";
 import Artist from "./Artist";
 import Author from "./Author";
 import Chapter from "./Chapter";
@@ -23,9 +27,18 @@ import Status from "./Status";
 import Title from "./Title";
 import Type from "./Type";
 
-export interface AddNovelFormProps {}
+const AddNovelForm: React.FC = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<INovels>({
+    mode: "onBlur",
+    resolver: yupResolver(NovelSchema),
+  });
 
-const AddNovelForm: React.FC<AddNovelFormProps> = () => {
+  const onSubmit: SubmitHandler<INovels> = async () => {};
+
   return (
     <>
       <Container>
@@ -35,15 +48,17 @@ const AddNovelForm: React.FC<AddNovelFormProps> = () => {
           p={{ base: 4, sm: 8, md: 12 }}
           my="12"
           shadow="2xl"
+          as="form"
+          onSubmit={handleSubmit(onSubmit)}
         >
           <Stack spacing="6">
-            <Title />
+            <Title register={register} errors={errors} />
             <Flex justifyContent="center">
-              <Author />
-              <Artist />
+              <Author register={register} errors={errors} />
+              <Artist register={register} errors={errors} />
             </Flex>
-            <Description />
-            <Language />
+            <Description register={register} errors={errors} />
+            <Language register={register} errors={errors} />
             <Flex justifyContent="center">
               <Chapter />
               <ReleaseDate />
