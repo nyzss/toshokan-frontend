@@ -8,6 +8,7 @@ import {
   Stack,
 } from "@chakra-ui/react";
 import { GiBroadsword } from "react-icons/gi";
+import { Types } from "utils/enums";
 export interface TypeProps {}
 
 const Type: React.FC<TypeProps> = () => {
@@ -19,9 +20,11 @@ const Type: React.FC<TypeProps> = () => {
         </FormLabel>
         <RadioGroup colorScheme="toshokan" defaultValue="Light Novel">
           <Stack direction={["column", "row"]} spacing="24px">
-            <Radio value="Light Novel">Light Novel</Radio>
-            <Radio value="Web Novel">Web Novel</Radio>
-            <Radio value="Published Novel">Published Novel</Radio>
+            {Types.map((types) => (
+              <Radio key={types} value={types}>
+                {types}
+              </Radio>
+            ))}
           </Stack>
         </RadioGroup>
         <FormHelperText>

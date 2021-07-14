@@ -1,6 +1,7 @@
 import {
   Flex,
   FormControl,
+  FormHelperText,
   FormLabel,
   Icon,
   Stack,
@@ -51,6 +52,11 @@ const CoverUpload: React.FC<CoverUploadProps> = () => {
             <Text fontSize="xs">PNG, JPG up to 5mb</Text>
           </Stack>
         </Flex>
+        <FormHelperText mt="4">
+          {
+            "If you have an url, instead of uploading you can switch to the 'Cover URL' tab and just paste it there!"
+          }
+        </FormHelperText>
       </FormControl>
     </>
   );

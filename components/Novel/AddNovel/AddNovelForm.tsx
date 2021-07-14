@@ -1,5 +1,6 @@
 import {
   Box,
+  Button,
   Container,
   Flex,
   Stack,
@@ -52,7 +53,7 @@ const AddNovelForm: React.FC<AddNovelFormProps> = () => {
             <Tabs colorScheme="toshokan">
               <TabList>
                 <Tab>Upload a cover</Tab>
-                <Tab>Link a cover</Tab>
+                <Tab>Cover URL</Tab>
               </TabList>
               <TabPanels>
                 <TabPanel>
@@ -64,6 +65,9 @@ const AddNovelForm: React.FC<AddNovelFormProps> = () => {
               </TabPanels>
             </Tabs>
           </Stack>
+          <Button bgColor={useColorModeValue("red.300", "red.400")}>
+            Submit Novel
+          </Button>
         </Box>
       </Container>
     </>

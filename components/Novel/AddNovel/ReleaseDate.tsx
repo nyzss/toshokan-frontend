@@ -19,7 +19,7 @@ const ReleaseDate: React.FC<ReleaseDateProps> = () => {
         <FormLabel>
           Release Year <Icon color="red.300" as={BiCalendarAlt} />
         </FormLabel>
-        <NumberInput max={20000}>
+        <NumberInput max={2030}>
           <NumberInputField />
           <NumberInputStepper>
             <NumberIncrementStepper />
