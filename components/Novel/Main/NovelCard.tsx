@@ -16,6 +16,7 @@ const NovelCard: React.FC<NovelCardProps> = ({
         >
           <Image
             src={coverUrl}
+            fallbackSrc="https://ryrimwaobktkmpeancvt.supabase.co/storage/v1/object/public/toshokan/512x.png"
             objectFit="cover"
             alt="novel cover"
             roundedTop="sm"
