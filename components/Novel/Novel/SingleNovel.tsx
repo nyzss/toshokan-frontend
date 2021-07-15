@@ -5,6 +5,8 @@ export interface SingleNovelProps {
 const SingleNovel: React.FC<SingleNovelProps> = ({ id }) => {
   console.log(id);
 
+  // const { data } = useQuery("single-novel", GetSingleNovel); // do here next
+
   return (
     <>
       <h1>{id}</h1>

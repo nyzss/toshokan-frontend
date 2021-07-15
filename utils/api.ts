@@ -101,3 +101,13 @@ export const AddNovel = async (novel: INovels) => {
     console.log(error);
   }
 };
+
+export const GetSingleNovel = async (id: string) => {
+  try {
+    const allNovels = await instance.get(`/novel/${id}`);
+
+    return allNovels.data;
+  } catch (error) {
+    console.log(error);
+  }
+};
