@@ -1,5 +1,6 @@
 import {
   FormControl,
+  FormErrorMessage,
   FormHelperText,
   FormLabel,
   Icon,
@@ -14,7 +15,7 @@ import { NovelProps } from "utils/types/novel";
 const Type: React.FC<NovelProps> = ({ register, errors }) => {
   return (
     <>
-      <FormControl>
+      <FormControl isInvalid={errors.type ? true : false}>
         <FormLabel>
           Novel Type <Icon color="red.300" as={GiBroadsword} />
         </FormLabel>
@@ -27,6 +28,7 @@ const Type: React.FC<NovelProps> = ({ register, errors }) => {
             ))}
           </Stack>
         </RadioGroup>
+        <FormErrorMessage>{errors.type?.message}</FormErrorMessage>
         <FormHelperText>
           The type of the novel, if unsure select Web Novel.
         </FormHelperText>

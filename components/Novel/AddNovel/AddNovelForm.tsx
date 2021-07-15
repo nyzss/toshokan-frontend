@@ -55,18 +55,23 @@ const AddNovelForm: React.FC = () => {
         >
           <Stack spacing="6">
             <Title register={register} errors={errors} />
+            {/* */}
             <Flex justifyContent="center">
               <Author register={register} errors={errors} />
               <Artist register={register} errors={errors} />
             </Flex>
+            {/* */}
             <Description register={register} errors={errors} />
             <Language register={register} errors={errors} />
+            {/* */}
             <Flex justifyContent="center">
               <Chapter register={register} errors={errors} />
               <ReleaseDate register={register} errors={errors} />
             </Flex>
+            {/* */}
             <Type register={register} errors={errors} />
             <Status register={register} errors={errors} />
+            {/* */}
             <Tabs colorScheme="toshokan">
               <TabList>
                 <Tab>Upload a cover</Tab>
@@ -81,6 +86,7 @@ const AddNovelForm: React.FC = () => {
                 </TabPanel>
               </TabPanels>
             </Tabs>
+            {/* */}
           </Stack>
           <Button
             type="submit"

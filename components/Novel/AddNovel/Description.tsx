@@ -1,5 +1,6 @@
 import {
   FormControl,
+  FormErrorMessage,
   FormHelperText,
   FormLabel,
   Icon,
@@ -12,7 +13,7 @@ import { NovelProps } from "../../../utils/types/novel";
 const NovelDescription: React.FC<NovelProps> = ({ register, errors }) => {
   return (
     <>
-      <FormControl>
+      <FormControl isInvalid={errors.description ? true : false}>
         <FormLabel>
           Description <Icon color="red.300" as={GrTextAlignLeft} />
         </FormLabel>
@@ -24,6 +25,7 @@ const NovelDescription: React.FC<NovelProps> = ({ register, errors }) => {
           maxRows={24}
           {...register("description")}
         />
+        <FormErrorMessage>{errors.description?.message}</FormErrorMessage>
         <FormHelperText>
           The description or synopsis of the novel.
         </FormHelperText>

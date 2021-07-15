@@ -1,5 +1,6 @@
 import {
   FormControl,
+  FormErrorMessage,
   FormHelperText,
   FormLabel,
   Icon,
@@ -10,12 +11,12 @@ import {
   NumberInputStepper,
 } from "@chakra-ui/react";
 import { BiCalendarAlt } from "react-icons/bi";
-import { NovelProps } from "../../../utils/types/novel";
+import { NovelProps } from "utils/types/novel";
 
 const ReleaseDate: React.FC<NovelProps> = ({ register, errors }) => {
   return (
     <>
-      <FormControl>
+      <FormControl isInvalid={errors.releaseYear ? true : false}>
         <FormLabel>
           Release Year <Icon color="red.300" as={BiCalendarAlt} />
         </FormLabel>
@@ -26,9 +27,10 @@ const ReleaseDate: React.FC<NovelProps> = ({ register, errors }) => {
             <NumberDecrementStepper />
           </NumberInputStepper>
         </NumberInput>
+        <FormErrorMessage>{errors.releaseYear?.message}</FormErrorMessage>
         <FormHelperText>
           {
-            "The year when the Novel was released. If unsure just put the first volume/chapter's release date."
+            "The year when the Novel was released. If unsure just put the first volume/chapter's release date or leave blank."
           }
         </FormHelperText>
       </FormControl>

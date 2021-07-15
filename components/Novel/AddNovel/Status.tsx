@@ -1,5 +1,6 @@
 import {
   FormControl,
+  FormErrorMessage,
   FormHelperText,
   FormLabel,
   Icon,
@@ -14,7 +15,7 @@ import { NovelProps } from "../../../utils/types/novel";
 const Status: React.FC<NovelProps> = ({ register, errors }) => {
   return (
     <>
-      <FormControl>
+      <FormControl isInvalid={errors.status ? true : false}>
         <FormLabel>
           Status <Icon color="red.300" as={IoMdCheckmark} />
         </FormLabel>
@@ -27,6 +28,7 @@ const Status: React.FC<NovelProps> = ({ register, errors }) => {
             ))}
           </Stack>
         </RadioGroup>
+        <FormErrorMessage>{errors.status?.message}</FormErrorMessage>
         <FormHelperText>
           The status of the novel, if unsure select Ongoing.
         </FormHelperText>

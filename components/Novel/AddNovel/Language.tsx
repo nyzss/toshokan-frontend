@@ -1,5 +1,6 @@
 import {
   FormControl,
+  FormErrorMessage,
   FormHelperText,
   FormLabel,
   Icon,
@@ -12,7 +13,7 @@ import { NovelProps } from "../../../utils/types/novel";
 const Language: React.FC<NovelProps> = ({ register, errors }) => {
   return (
     <>
-      <FormControl>
+      <FormControl isInvalid={errors.language ? true : false}>
         <FormLabel>
           {"Select the novel's language"}{" "}
           <Icon color="red.300" as={IoLanguage} />
@@ -24,6 +25,7 @@ const Language: React.FC<NovelProps> = ({ register, errors }) => {
             </option>
           ))}
         </Select>
+        <FormErrorMessage>{errors.language?.message}</FormErrorMessage>
 
         <FormHelperText>{"The novel's original language"}</FormHelperText>
       </FormControl>
