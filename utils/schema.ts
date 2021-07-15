@@ -39,6 +39,7 @@ export const LoginSchema = y.object().shape({
 
 export const NovelSchema = y.object().shape({
   //i'm not really sure about these, i'll probably look around these again later on
+  // this is really bad lmao
   title: y
     .string()
     .max(
@@ -55,6 +56,10 @@ export const NovelSchema = y.object().shape({
     .required("Please provide the name of the author of this novel."),
   artist: y
     .string()
+    .transform((value: string, originalValue: string) =>
+      originalValue.trim() === "" ? null : value
+    )
+    .nullable()
     .max(
       128,
       "Make sure the name of the artist is less than 255 characters long. If the artist's name happens to be longer, be sure to contact me with the informations at the top of this page."
@@ -68,11 +73,18 @@ export const NovelSchema = y.object().shape({
     .required(
       "A short description or synopsis is required when adding a novel."
     ),
-  chapters: y
+  chapter: y
     .number()
-    .lessThan(
-      50000,
-      "If the total chapter count exceeds 50.000 please contact me with the informations provided at the top of the page."
+    // .lessThan(
+    //   50000,
+    //   "If the total chapter count exceeds 50.000 please contact me with the informations provided at the top of the page."
+    // )
+    //   .typeError(
+    //     "The chapter count cannot be blank, please enter 0 if you are unsure about the total."
+    // )
+    .nullable(true)
+    .transform((value: string, originalValue: string) =>
+      originalValue.trim() === "" ? null : value
     )
     .positive()
     .integer(),
@@ -80,13 +92,18 @@ export const NovelSchema = y.object().shape({
     .number()
     .positive()
     .integer()
-    .lessThan(2030, "So the release year is after 2030 huh?")
-    .moreThan(
-      1970,
-      "If the novel you want to add was released before 1970 then please contact me with the informations provided at the top of the page."
+    .transform((value: string, originalValue: string) =>
+      originalValue.trim() === "" ? null : value
     )
-    .required("Please provide a release year."),
+    //  .required("Please provide a release year.")
+    .nullable(true),
+  // .lessThan(2035)
+  // .moreThan(1970)
   coverUrl: y
     .string()
-    .max(500, "Please use a url shortener or upload the image elsewhere."),
+    .max(500, "Please use a url shortener or upload the image elsewhere.")
+    .transform((value: string, originalValue: string) =>
+      originalValue.trim() === "" ? null : value
+    )
+    .nullable(),
 });
