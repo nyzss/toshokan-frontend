@@ -13,6 +13,8 @@ import {
 } from "@chakra-ui/react";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { SubmitHandler, useForm } from "react-hook-form";
+import { useMutation } from "react-query";
+import { AddNovel } from "utils/api";
 import { NovelSchema } from "utils/schema";
 import { INovels } from "utils/types/novel";
 import Artist from "./Artist";
@@ -37,8 +39,10 @@ const AddNovelForm: React.FC = () => {
     resolver: yupResolver(NovelSchema),
   });
 
+  const { mutateAsync: mutateNovel } = useMutation(AddNovel);
+
   const onSubmit: SubmitHandler<INovels> = async (data) => {
-    console.log(data);
+    await mutateNovel(data).then((res) => console.log(res));
   };
 
   return (

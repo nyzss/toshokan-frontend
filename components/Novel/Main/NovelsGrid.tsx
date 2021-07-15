@@ -10,7 +10,8 @@ const NovelsGrid: React.FC = () => {
     "home-novels",
     HomeNovels,
     {
-      staleTime: 30 * 60 * 1000, //refreshing every 30 minutes
+      // staleTime: 30 * 60 * 1000, //refreshing every 30 minutes
+      staleTime: 60 * 1000, //every minute cause yeah
     }
   );
 

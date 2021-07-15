@@ -1,5 +1,6 @@
 import axios from "axios";
 import { ILogin, IRegister, SetError, Toast } from "./types/api";
+import { INovels } from "./types/novel";
 
 const instance = axios.create({
   withCredentials: true,
@@ -86,6 +87,16 @@ export const HomeNovels = async () => {
   try {
     const novels = await instance.get("/novel");
     return novels.data;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const AddNovel = async (novel: INovels) => {
+  try {
+    const newNovel = await instance.post("/novel/add", novel);
+
+    return newNovel.data;
   } catch (error) {
     console.log(error);
   }
