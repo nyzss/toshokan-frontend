@@ -17,7 +17,7 @@ const Language: React.FC<NovelProps> = ({ register, errors }) => {
           {"Select the novel's language"}{" "}
           <Icon color="red.300" as={IoLanguage} />
         </FormLabel>
-        <Select placeholder="" {...register("language")}>
+        <Select defaultValue="Japanese" {...register("language")}>
           {Languages.map((lang) => (
             <option key={lang} value={lang}>
               {lang}

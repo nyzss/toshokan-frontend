@@ -20,7 +20,7 @@ const Chapter: React.FC<NovelProps> = ({ register, errors }) => {
           Chapters <Icon color="red.300" as={BiBook} />
         </FormLabel>
 
-        <NumberInput allowMouseWheel max={20000}>
+        <NumberInput allowMouseWheel max={50000}>
           <NumberInputField {...register("chapter")} />
           <NumberInputStepper>
             <NumberIncrementStepper />
