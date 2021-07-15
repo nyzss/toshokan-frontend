@@ -18,14 +18,10 @@ const Status: React.FC<NovelProps> = ({ register, errors }) => {
         <FormLabel>
           Status <Icon color="red.300" as={IoMdCheckmark} />
         </FormLabel>
-        <RadioGroup
-          colorScheme="toshokan"
-          defaultValue="Ongoing"
-          {...register("status")}
-        >
+        <RadioGroup colorScheme="toshokan" defaultValue="Ongoing">
           <Stack direction={["column", "row"]} spacing="24px">
             {EStatus.map((status) => (
-              <Radio key={status} value={status}>
+              <Radio key={status} {...register("status")} value={status}>
                 {status}
               </Radio>
             ))}
