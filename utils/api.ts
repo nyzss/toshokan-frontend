@@ -102,8 +102,10 @@ export const AddNovel = async (novel: INovels) => {
   }
 };
 
-export const GetSingleNovel = async (id: string) => {
+export const GetSingleNovel = async (query: any) => {
   try {
+    const id = query.queryKey[1];
+
     const allNovels = await instance.get(`/novel/${id}`);
 
     return allNovels.data;

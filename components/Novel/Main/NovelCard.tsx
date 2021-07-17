@@ -1,8 +1,9 @@
 import { Badge, Box, Flex, Image, useColorModeValue } from "@chakra-ui/react";
+import Link from "next/link";
 import { NovelCardProps } from "utils/types/components";
 
 const NovelCard: React.FC<NovelCardProps> = ({
-  novel: { title, description, totalReader, coverUrl },
+  novel: { id, title, description, totalReader, coverUrl },
 }) => {
   return (
     <>
@@ -14,15 +15,17 @@ const NovelCard: React.FC<NovelCardProps> = ({
           rounded="md"
           shadow="xl"
         >
-          <Image
-            src={coverUrl}
-            fallbackSrc="https://ryrimwaobktkmpeancvt.supabase.co/storage/v1/object/public/toshokan/512x.png"
-            objectFit="cover"
-            alt="novel cover"
-            roundedTop="sm"
-            boxSize="96"
-          />
-
+          <Link href={`/novels/${id}`} passHref>
+            <Image
+              src={coverUrl}
+              fallbackSrc="https://ryrimwaobktkmpeancvt.supabase.co/storage/v1/object/public/toshokan/512x.png"
+              objectFit="cover"
+              alt="novel cover"
+              roundedTop="sm"
+              boxSize="96"
+              cursor="pointer"
+            />
+          </Link>
           <Box py="6" px="4">
             <Box d="flex" alignItems="baseline">
               <Badge px="3" colorScheme="pink">
