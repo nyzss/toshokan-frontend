@@ -16,17 +16,9 @@ import {
   Wrap,
   WrapItem,
 } from "@chakra-ui/react";
-import { useQuery } from "react-query";
-import { GetSingleNovel } from "utils/api";
+import { INovels } from "utils/types/novel";
 
-const SingleNovel: React.FC<{ id: string | string[] | undefined }> = ({
-  id,
-}) => {
-  const { data } = useQuery(["single-novel", id], GetSingleNovel, {
-    staleTime: 5 * 60 * 1000,
-  });
-  data && console.log(data);
-
+const SingleNovel: React.FC<{ novel: INovels }> = ({ novel }) => {
   return (
     <>
       <Container maxW={"7xl"} p="12">
@@ -40,7 +32,7 @@ const SingleNovel: React.FC<{ id: string | string[] | undefined }> = ({
           </BreadcrumbItem>
 
           <BreadcrumbItem isCurrentPage>
-            <BreadcrumbLink href="#">Name of the novel here</BreadcrumbLink>
+            <BreadcrumbLink href="#">{novel.title}</BreadcrumbLink>
           </BreadcrumbItem>
         </Breadcrumb>
         <Box
@@ -94,7 +86,7 @@ const SingleNovel: React.FC<{ id: string | string[] | undefined }> = ({
               display="flex"
               alignItems="center"
             >
-              <Text fontWeight="medium">author name here</Text>
+              <Text fontWeight="medium">{novel.author}</Text>
               <Text>—</Text>
               <Text>idk probly date?</Text>
             </HStack>
@@ -104,8 +96,9 @@ const SingleNovel: React.FC<{ id: string | string[] | undefined }> = ({
           <WrapItem width={{ base: "100%", sm: "45%", md: "45%", lg: "30%" }}>
             <Box w="100%">
               <SimpleGrid spacing={2} columns={3} marginTop="5">
+                {novel.tags} {/** here list the tags of the novel */}
                 <Tag size="md" variant="solid" colorScheme="toshokan">
-                  tags here - might wanna check the columns thingy
+                  {" "}
                 </Tag>
               </SimpleGrid>
             </Box>
@@ -113,14 +106,7 @@ const SingleNovel: React.FC<{ id: string | string[] | undefined }> = ({
         </Wrap>
         <VStack paddingTop="40px" spacing="2" alignItems="flex-start">
           <Heading>Description</Heading>
-          <Text fontSize="lg">
-            long desc herelong desc herelong desc herelong desc herelong desc
-            herelong desc herelong desc herelong desc herelong desc herelong
-            desc herelong desc herelong desc herelong desc herelong desc
-            herelong desc herelong desc herelong desc herelong desc herelong
-            desc herelong desc herelong desc herelong desc herelong desc
-            herelong desc herelong desc herelong desc herelong desc here
-          </Text>
+          <Text fontSize="lg">{novel.description}</Text>
         </VStack>
       </Container>
     </>
