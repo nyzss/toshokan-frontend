@@ -1,4 +1,5 @@
-import SingleNovel from "components/Novel/Novel/SingleNovel";
+import SingleNovel from "components/Novel/SingleNovel/SingleNovel";
+import Head from "next/head";
 import { useRouter } from "next/router";
 import { useQuery } from "react-query";
 import { GetSingleNovel } from "utils/api";
@@ -14,7 +15,14 @@ const Novel: React.FC = () => {
 
   data && console.log(data);
 
-  return <>{data && <SingleNovel novel={data} />}</>;
+  return (
+    <>
+      <Head>
+        <title>{data?.title || "Loading..."} - toshokan </title>
+      </Head>
+      {data && <SingleNovel novel={data} />}
+    </>
+  );
 };
 
 export default Novel;
