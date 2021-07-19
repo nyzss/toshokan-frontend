@@ -96,10 +96,18 @@ const SingleNovel: React.FC<{ novel: INovels }> = ({ novel }) => {
           <WrapItem width={{ base: "100%", sm: "45%", md: "45%", lg: "30%" }}>
             <Box w="100%">
               <SimpleGrid spacing={2} columns={3} marginTop="5">
-                {novel.tags} {/** here list the tags of the novel */}
-                <Tag size="md" variant="solid" colorScheme="toshokan">
-                  {" "}
-                </Tag>
+                {novel.tags &&
+                  novel.tags.map((tags) => (
+                    <Tag
+                      key={tags.id}
+                      size="md"
+                      variant="solid"
+                      colorScheme="toshokan"
+                    >
+                      {tags.title}
+                    </Tag>
+                  ))}{" "}
+                {/** here list the tags of the novel */}
               </SimpleGrid>
             </Box>
           </WrapItem>
